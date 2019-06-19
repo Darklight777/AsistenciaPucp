@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".features.teacher.token.TeacherTokenActivity"></activity>
+        <activity android:name=".features.teacher.messages.TeacherMessagesActivity" />
+        <activity android:name=".features.teacher.attendance.TeacherAttendanceActivity" />
+        <activity android:name=".features.student.token.StudentTokenActivity" />
+        <activity android:name=".features.student.messages.StudentMessagesActivity" />
+        <activity android:name=".features.student.attendance.StudentAttendanceActivity" />
+        <activity android:name=".features.teacher.TeacherActivity" />
+        <activity android:name=".features.student.StudentActivity" />
+        <activity android:name=".features.home.HomeActivity" />
+        <activity android:name=".features.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

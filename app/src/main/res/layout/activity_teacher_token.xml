@@ -1,9 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".features.teacher.token.TeacherTokenActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/teacherToken_txt_courseName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/teacherToken_txt_courseName"
+            android:textSize="36sp" />
+
+        <TextView
+            android:id="@+id/teacherToken_txt_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/teacherToken_txt_schedule"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/teacherToken_txt_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/teacherToken_txt_time"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/teacherToken_btn_token"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/teacherToken_btn_generate"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/teacherToken_txt_token"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <Switch
+            android:id="@+id/teacherToken_swt_enable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:text="@string/teacherToken_swt_enable" />
+
+    </LinearLayout>
+</ScrollView>

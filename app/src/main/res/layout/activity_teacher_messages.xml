@@ -1,9 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".features.teacher.messages.TeacherMessagesActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/teacherMessages_txt_course"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="50dp"
+            android:text="@string/teacherMessages_spn_course"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/teacherMessages_spn_course"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="30dp"
+            android:contentDescription="@string/teacherMessages_spn_course"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/teacherMessages_txt_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:text="@string/teacherMessages_spn_schedule"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/teacherMessages_spn_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:contentDescription="@string/teacherMessages_spn_schedule" />
+
+        <EditText
+            android:id="@+id/teacherMessages_txt_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/teacherMessages_txt_message" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:text="@string/teacherMessages_btn_message" />
+
+    </LinearLayout>
+</ScrollView>

@@ -40,17 +40,6 @@
             android:text="@string/studentToken_txt_time"
             android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/studentToken_txt_token"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:layout_marginRight="70dp"
-            android:layout_marginBottom="10dp"
-            android:padding="16dp"
-            android:text="@string/studentToken_txt_token"
-            android:textSize="24sp" />
-
         <Button
             android:id="@+id/studentToken_btn_send"
             android:layout_width="match_parent"

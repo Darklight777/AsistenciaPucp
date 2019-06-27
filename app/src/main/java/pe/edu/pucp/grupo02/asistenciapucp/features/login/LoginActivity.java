@@ -10,8 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.security.Principal;
+
 import pe.edu.pucp.grupo02.asistenciapucp.R;
 import pe.edu.pucp.grupo02.asistenciapucp.features.home.HomeActivity;
+import pe.edu.pucp.grupo02.asistenciapucp.features.principal.PrincipalActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.utils.Utilities;
 
 public class LoginActivity extends AppCompatActivity implements ILoginView {
@@ -90,7 +93,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
 
     public void goToHomePage(String fullName, String email) {
         // Iniciar la actividad principal
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, PrincipalActivity.class);
         intent.putExtra(LOGIN_EXTRA_FULLNAME, fullName);
         intent.putExtra(LOGIN_EXTRA_EMAIL, email);
         startActivity(intent);

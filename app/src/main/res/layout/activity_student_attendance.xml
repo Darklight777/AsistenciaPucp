@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFF00"
+    android:background="#26A69A"
     tools:context=".features.student.StudentActivity">
 
     <ImageButton
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginTop="18dp"
-        android:background="#FFFF00"
+        android:background="#26A69A"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/retroceder" />
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="18dp"
-        android:background="#FFFF00"
+        android:background="#26A69A"
         app:layout_constraintStart_toEndOf="@+id/student_txt_titlte"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/refresh" />
@@ -204,8 +204,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
-
 
 
 </android.support.constraint.ConstraintLayout>

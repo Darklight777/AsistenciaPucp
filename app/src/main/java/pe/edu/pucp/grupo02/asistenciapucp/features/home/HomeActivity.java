@@ -55,4 +55,13 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    //métodos nuevos para la navegación
+    public void goDictando(View v) {
+        setContentView(R.layout.activity_teacher_token);
+    }
+
+    public void goLlevando(View v) {
+        setContentView(R.layout.activity_student_attendance);
+    }
 }

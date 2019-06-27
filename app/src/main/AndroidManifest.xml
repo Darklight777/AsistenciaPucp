@@ -14,7 +14,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".features.teacher.token.TeacherTokenActivity"></activity>
+        <activity android:name=".features.principal.PrincipalActivity"></activity>
+        <activity android:name=".features.teacher.token.TeacherTokenActivity" />
         <activity android:name=".features.teacher.messages.TeacherMessagesActivity" />
         <activity android:name=".features.teacher.attendance.TeacherAttendanceActivity" />
         <activity android:name=".features.student.token.StudentTokenActivity" />

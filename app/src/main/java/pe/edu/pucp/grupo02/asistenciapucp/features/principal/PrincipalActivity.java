@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import pe.edu.pucp.grupo02.asistenciapucp.R;
+import pe.edu.pucp.grupo02.asistenciapucp.features.login.LoginActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.student.StudentActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.TeacherActivity;
 
@@ -23,5 +24,9 @@ public class PrincipalActivity extends AppCompatActivity {
     public void MoverATeacher(View view){
         Intent siguiente = new Intent(this, TeacherActivity.class);
         startActivity(siguiente);
+    }
+    public void CerrarSesion(View view){
+        Intent anterior = new Intent(this, LoginActivity.class);
+        startActivity(anterior);
     }
 }

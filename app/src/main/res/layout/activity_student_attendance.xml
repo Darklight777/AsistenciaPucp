@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/retroceder" />
 
     <ImageButton
-        android:id="@+id/principal_btn_dictating"
+        android:id="@+id/principal_btn_dictate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
@@ -81,7 +81,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/principal_lbl_take"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:textAlignment="textEnd"

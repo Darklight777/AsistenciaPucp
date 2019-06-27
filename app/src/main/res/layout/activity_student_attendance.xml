@@ -8,7 +8,7 @@
     tools:context=".features.student.StudentActivity">
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/principal_btn_taking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/retroceder" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/principal_btn_dictating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
@@ -43,7 +43,7 @@
         android:paddingBottom="10dp"
         android:textColor="@android:color/black"
         android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton2"
+        app:layout_constraintStart_toEndOf="@+id/principal_btn_taking"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout

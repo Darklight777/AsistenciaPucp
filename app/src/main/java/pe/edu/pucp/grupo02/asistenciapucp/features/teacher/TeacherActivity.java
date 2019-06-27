@@ -7,6 +7,7 @@ import android.view.View;
 
 import pe.edu.pucp.grupo02.asistenciapucp.R;
 import pe.edu.pucp.grupo02.asistenciapucp.features.home.HomeActivity;
+import pe.edu.pucp.grupo02.asistenciapucp.features.principal.PrincipalActivity;
 
 public class TeacherActivity extends AppCompatActivity {
 
@@ -16,7 +17,7 @@ public class TeacherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_teacher);
     }
     public void retroceder(View view){
-        Intent anterior = new Intent(this, HomeActivity.class);
+        Intent anterior = new Intent(this, PrincipalActivity.class);
         startActivity(anterior);
     }
 }

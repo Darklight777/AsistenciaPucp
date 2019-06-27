@@ -59,13 +59,13 @@
         android:fontFamily="sans-serif"
         android:text="Generar Token"
         android:textColor="@android:color/black"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton6"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageButton6"
-        app:layout_constraintVertical_bias="0.797" />
+        app:layout_constraintVertical_bias="0.756" />
 
     <TextView
         android:id="@+id/textView4"
@@ -78,13 +78,13 @@
         android:fontFamily="sans-serif"
         android:text="Anunciar"
         android:textColor="@android:color/black"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton7"
         app:layout_constraintEnd_toEndOf="@+id/imageButton7"
-        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="@+id/imageButton7"
         app:layout_constraintTop_toTopOf="@+id/imageButton7"
-        app:layout_constraintVertical_bias="0.858" />
+        app:layout_constraintVertical_bias="0.793" />
 
     <TextView
         android:id="@+id/textView5"
@@ -97,13 +97,13 @@
         android:fontFamily="sans-serif"
         android:text="Ver Asistencia"
         android:textColor="@android:color/black"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton8"
         app:layout_constraintEnd_toEndOf="@+id/imageButton8"
-        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="@+id/imageButton8"
         app:layout_constraintTop_toTopOf="@+id/imageButton8"
-        app:layout_constraintVertical_bias="0.858" />
+        app:layout_constraintVertical_bias="0.762" />
 
     <ImageButton
         android:id="@+id/imageButton4"

@@ -14,6 +14,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="18dp"
         android:background="#26A69A"
+        android:onClick="MoverAIngresarToken"
         android:scaleX="0.8"
         android:scaleY="0.8"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
@@ -32,6 +33,7 @@
         android:layout_marginTop="18dp"
         android:layout_marginEnd="36dp"
         android:background="#26A69A"
+        android:onClick="MoverAStudentAMessages"
         android:scaleX="0.8"
         android:scaleY="0.8"
         app:layout_constraintEnd_toStartOf="@+id/imageButton8"
@@ -47,6 +49,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="4dp"
         android:background="#26A69A"
+        android:onClick="MoverAStudentAttendance"
         android:scaleX="0.8"
         android:scaleY="0.8"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,13 +66,13 @@
         android:fontFamily="sans-serif"
         android:text="Ingresar Token"
         android:textColor="@android:color/black"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton6"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageButton6"
-        app:layout_constraintVertical_bias="0.797" />
+        app:layout_constraintVertical_bias="0.751" />
 
     <TextView
         android:id="@+id/textView4"
@@ -82,13 +85,13 @@
         android:fontFamily="sans-serif"
         android:text="Ver Anuncios"
         android:textColor="@android:color/black"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton7"
         app:layout_constraintEnd_toEndOf="@+id/imageButton7"
-        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="@+id/imageButton7"
         app:layout_constraintTop_toTopOf="@+id/imageButton7"
-        app:layout_constraintVertical_bias="0.858" />
+        app:layout_constraintVertical_bias="0.756" />
 
     <TextView
         android:id="@+id/textView5"
@@ -101,13 +104,13 @@
         android:fontFamily="sans-serif"
         android:text="Ver Asistencia"
         android:textColor="@android:color/black"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton8"
         app:layout_constraintEnd_toEndOf="@+id/imageButton8"
-        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="@+id/imageButton8"
         app:layout_constraintTop_toTopOf="@+id/imageButton8"
-        app:layout_constraintVertical_bias="0.858" />
+        app:layout_constraintVertical_bias="0.768" />
 
     <ImageButton
         android:id="@+id/imageButton3"

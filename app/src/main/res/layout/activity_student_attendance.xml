@@ -93,6 +93,7 @@
                 android:textColor="#000000"
                 android:textSize="36sp"
                 android:textStyle="bold"
+                android:visibility="visible"
                 tools:text="@string/student_txt_porcentaje" />
         </LinearLayout>
 
@@ -146,6 +147,7 @@
                 android:textColor="#000000"
                 android:textSize="36sp"
                 android:textStyle="bold"
+                android:visibility="visible"
                 tools:text="@string/student_txt_porcentaje" />
 
         </LinearLayout>
@@ -199,6 +201,7 @@
                 android:textColor="#000000"
                 android:textSize="36sp"
                 android:textStyle="bold"
+                android:visibility="visible"
                 tools:text="@string/student_txt_porcentaje" />
 
         </LinearLayout>

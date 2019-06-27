@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">AsistenciaPucp</string>
-    <string name="probandoGit">NuevoGit</string>
+    <string name="app_name">Asistencia Pucp</string>
 
     <!-- Inicio de sesión -->
     <string name="login_txt_title">Inicio de sesión</string>

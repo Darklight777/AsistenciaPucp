@@ -11,7 +11,7 @@ import pe.edu.pucp.grupo02.asistenciapucp.data.db.entities.User;
 @Database(entities = {User.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
-    private static final String DB_NAME = "myfirstlogin.db";
+    private static final String DB_NAME = "asistenciapucp.db";
     private static AppDatabase INSTANCE;
 
     public static AppDatabase getInstance(Context context) {

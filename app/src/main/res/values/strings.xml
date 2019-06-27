@@ -43,10 +43,10 @@
     <string name="teacherMessages_txt_message">Mensaje</string>
 
     <!--student token -->
-    <string name="studentToken_txt_courseName">Nombre del curso</string>
-    <string name="studentToken_txt_schedule">Horario</string>
-    <string name="studentToken_txt_time">Hora</string>
-    <string name="studentToken_txt_token">Token</string>
+    <string name="studentToken_txt_courseName">Nombre del curso: </string>
+    <string name="studentToken_txt_schedule">Horario: </string>
+    <string name="studentToken_txt_time">Hora: </string>
+    <string name="studentToken_txt_token">Token: </string>
     <string name="studentToken_btn_send">Marcar Asistencia</string>
 
     <!--student attendance control -->

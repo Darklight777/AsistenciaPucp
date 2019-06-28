@@ -7,25 +7,21 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.base.BaseOutRO;
 
 
-@JsonRootName("generateTokenOutRO")
-public class GenerateTokenOutRO extends BaseOutRO {
+@JsonRootName("studentTokenOutRO")
+public class StudentTokenOutRO extends BaseOutRO {
 
-    private String token;
-
-    public String getToken() {
-        return token;
-    }
+    private boolean ack;
 
     @JsonCreator
-    public GenerateTokenOutRO(@JsonProperty("errorCode") int errorCode,
+    public StudentTokenOutRO(@JsonProperty("errorCode") int errorCode,
                               @JsonProperty("message") String message,
-                              @JsonProperty("token") String token){
+                              @JsonProperty("message") boolean ack){
         super(errorCode,message);
-        this.token = token;
+        this.ack = ack;
 
     }
 
-
-
-
+    public boolean isAck() {
+        return ack;
+    }
 }

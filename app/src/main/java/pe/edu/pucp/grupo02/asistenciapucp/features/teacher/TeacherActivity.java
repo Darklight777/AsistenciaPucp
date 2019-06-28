@@ -72,7 +72,7 @@ public class TeacherActivity extends AppCompatActivity implements ITeacherView{
         Utilities.hideKeyboard(this);
 
         //datos de entrada para verificacion:
-        if (mPresenter.verifyTokenData( dateFormat.format(date))){
+        if (mPresenter.verifyTokenData( "s")){
             mPresenter.tokenRest(dateFormat.format(date));
             Utilities.showMessage(this,R.string.teacher_msg_loading);
         }

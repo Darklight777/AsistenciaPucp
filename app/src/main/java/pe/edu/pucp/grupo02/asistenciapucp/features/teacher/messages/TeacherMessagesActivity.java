@@ -23,9 +23,7 @@ public class TeacherMessagesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_messages);
 
-        mCourse1 = super.findViewById(R.id.teacherAttendance_txt_porcentaje1);
-        mCourse2 = super.findViewById(R.id.teacherAttendance_txt_porcentaje2);
-        mCourse3 = super.findViewById(R.id.teacherAttendance_txt_porcentaje3);
+
 
 
         showInfo();

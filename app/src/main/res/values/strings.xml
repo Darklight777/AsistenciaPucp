@@ -70,5 +70,13 @@
     <string name="teacherAttendance_lbl_firstcourse">curso1</string>
     <string name="teacherAttendance_lbl_secondcourse">curso2</string>
     <string name="teacherAttendance_lbl_thirdcourse">curso3</string>
+    <string name="teacherToken_txt_schedule_txt_tittle">horario</string>
+    <string name="teacher_lbl_firstcourse">curso1</string>
+    <string name="teacher_txt_porcentaje">%</string>
+    <string name="teacher_lbl_secondcourse">curso2</string>
+    <string name="teacher_lbl_thirdcourse">curso3</string>
+    <string name="teacher_txt_tittle">ASISTENCIA</string>
+
+
 
 </resources>

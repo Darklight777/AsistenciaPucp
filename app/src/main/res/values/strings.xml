@@ -69,4 +69,5 @@
     <string name="teacherAttendance_lbl_firstcourse">curso1</string>
     <string name="teacherAttendance_lbl_secondcourse">curso2</string>
     <string name="teacherAttendance_lbl_thirdcourse">curso3</string>
+
 </resources>

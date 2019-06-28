@@ -53,9 +53,9 @@
 
     <!--student attendance control -->
     <string name="student_txt_tittle">ASISTENCIA</string>
-    <string name="student_lbl_firstcourse">Circuitos Digitales</string>
-    <string name="student_lbl_secondcourse">Maquinas Electricas</string>
-    <string name="student_lbl_thirdcourse">Programacion en Dispositivos Moviles</string>
+    <string name="student_lbl_firstcourse">Circuitos Digitales: </string>
+    <string name="student_lbl_secondcourse">Maquinas Electricas: </string>
+    <string name="student_lbl_thirdcourse">Programacion en Dispositivos Moviles: </string>
     <string name="student_txt_porcentaje">  %</string>
 
 </resources>

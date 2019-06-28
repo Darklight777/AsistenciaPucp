@@ -33,6 +33,7 @@
         app:srcCompat="@drawable/retroceder_v2" />
 
     <LinearLayout
+        android:id="@+id/student_lyt_msjes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="8dp"
@@ -45,31 +46,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/editText4"
+        <TextView
+            android:id="@+id/student_msje1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
+            android:layout_margin="16dp"
+            android:lines="4"
             android:paddingTop="16dp" />
 
-        <EditText
-            android:id="@+id/editText5"
+        <TextView
+            android:id="@+id/student_msje2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
+            android:layout_margin="16dp"
+            android:lines="4"
             android:paddingTop="16dp" />
 
-        <EditText
-            android:id="@+id/editText6"
+        <TextView
+            android:id="@+id/student_msje3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
+            android:layout_margin="16dp"
+            android:lines="4"
             android:paddingTop="16dp" />
     </LinearLayout>
 

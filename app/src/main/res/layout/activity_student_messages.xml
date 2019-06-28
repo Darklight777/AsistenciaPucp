@@ -21,14 +21,12 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="30dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="40dp"
         android:onClick="retroceder"
         app:layout_constraintEnd_toStartOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/retroceder_v2" />
 
@@ -51,6 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            android:background="#FFFFFF"
             android:lines="4"
             android:paddingTop="16dp" />
 
@@ -59,6 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            android:background="#FFFFFF"
             android:lines="4"
             android:paddingTop="16dp" />
 
@@ -67,6 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            android:background="#FFFFFF"
             android:lines="4"
             android:paddingTop="16dp" />
     </LinearLayout>

@@ -70,12 +70,7 @@ public class TeacherTokenActivity extends AppCompatActivity implements ITeacherT
     }
 
 
-    public  void swtOnClick(View view){
-
-
-
-    }
-
+    public  void swtOnClick(View view){}
 
     private void showInfo(){
         Bundle extras = getIntent().getExtras();
@@ -85,7 +80,6 @@ public class TeacherTokenActivity extends AppCompatActivity implements ITeacherT
             mCourseTime.setText(extras.getString(TeacherActivity.TEACHER_TOKEN_EXTRA_COURSETIME));
         }
     }
-
     public void showErrorDialog(String message) {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.teacher_dlg_error_title)

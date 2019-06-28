@@ -5,7 +5,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import pe.edu.pucp.grupo02.asistenciapucp.R;
 import pe.edu.pucp.grupo02.asistenciapucp.features.student.StudentActivity;
@@ -26,6 +32,7 @@ public class TeacherAttendanceActivity extends AppCompatActivity {
         percent1 = super.findViewById(R.id.principal_lbl_asis1);
         percent2 = super.findViewById(R.id.principal_lbl_asis2);
         percent3 = super.findViewById(R.id.principal_lbl_asis3);
+
 
         showUserDetails();
 

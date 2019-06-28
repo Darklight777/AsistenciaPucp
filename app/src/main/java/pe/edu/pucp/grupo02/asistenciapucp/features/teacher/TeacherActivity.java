@@ -15,6 +15,7 @@ import java.util.Date;
 
 import okhttp3.internal.Util;
 import pe.edu.pucp.grupo02.asistenciapucp.R;
+import pe.edu.pucp.grupo02.asistenciapucp.features.login.LoginActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.principal.PrincipalActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.attendance.TeacherAttendanceActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.messages.TeacherMessagesActivity;
@@ -28,6 +29,11 @@ public class TeacherActivity extends AppCompatActivity implements ITeacherView{
     public final static String TEACHER_TOKEN_EXTRA_COURSENAME = "TEACHER_EXTRA_COURSENAME";
     public final static String TEACHER_TOKEN_EXTRA_COURSETIME = "TEACHER_EXTRA_COURSETIME";
     public final static String TEACHER_TOKEN_EXTRA_COURSESCH = "TEACHER_EXTRA_COURSESCH";
+
+    public final static String TEACHER_ATTENDANCE_EXTRA_P1 = "TEACHER_ATTENDANCE_EXTRA_P1";
+    public final static String TEACHER_ATTENDANCE_EXTRA_P2 = "TEACHER_ATTENDANCE_EXTRA_P2";
+    public final static String TEACHER_ATTENDANCE_EXTRA_P3 = "TEACHER_ATTENDANCE_EXTRA_P3";
+
 
     private ITeacherPresenter mPresenter;
 
@@ -93,9 +99,11 @@ public class TeacherActivity extends AppCompatActivity implements ITeacherView{
     {
         Utilities.hideKeyboard(this);
 
+
         //datos de entrada para verificacion:
+
         if (mPresenter.verifyAttendaceData()){
-            mPresenter.attendanceRest();
+            mPresenter.attendanceRest("20161505");
             Utilities.showMessage(this, R.string.teacher_msg_loading);
         }
 
@@ -109,8 +117,11 @@ public class TeacherActivity extends AppCompatActivity implements ITeacherView{
         //finish();
     }
 
-    public void MoverATeacherAttendance(){//String n1, String n2, String n3){
+    public void MoverATeacherAttendance(String n1, String n2, String n3){//String n1, String n2, String n3){
         Intent siguiente = new Intent(this, TeacherAttendanceActivity.class);
+        siguiente.putExtra(TEACHER_ATTENDANCE_EXTRA_P1, n1);
+        siguiente.putExtra(TEACHER_ATTENDANCE_EXTRA_P2, n2);
+        siguiente.putExtra(TEACHER_ATTENDANCE_EXTRA_P3, n3);
         startActivity(siguiente);
     }
     public void MoverATeacherAMessages(){

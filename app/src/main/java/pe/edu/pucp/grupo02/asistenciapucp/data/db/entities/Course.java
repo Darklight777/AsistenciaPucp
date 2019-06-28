@@ -14,4 +14,7 @@ public class Course {
     @ColumnInfo(name = "COURSE_NAME")
     private String courseName;
 
+    public int getCourseId() { return courseId; }
+
+    public String getCourseName() { return courseName; }
 }

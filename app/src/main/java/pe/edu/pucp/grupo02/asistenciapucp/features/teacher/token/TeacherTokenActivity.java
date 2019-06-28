@@ -1,22 +1,15 @@
 package pe.edu.pucp.grupo02.asistenciapucp.features.teacher.token;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import java.util.Random;
-
 import pe.edu.pucp.grupo02.asistenciapucp.R;
-import pe.edu.pucp.grupo02.asistenciapucp.features.principal.PrincipalActivity;
-import pe.edu.pucp.grupo02.asistenciapucp.features.student.IStudentView;
-import pe.edu.pucp.grupo02.asistenciapucp.features.student.messages.StudentMessagesActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.TeacherActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.utils.Utilities;
 
@@ -41,7 +34,7 @@ public class TeacherTokenActivity extends AppCompatActivity implements ITeacherT
         mCourseName = super.findViewById(R.id.teacherToken_txt_courseName);
         mCourseSchedule = super.findViewById(R.id.teacherToken_txt_schedule);
         mCourseTime = super.findViewById(R.id.teacherToken_txt_time);
-        mToken = this.findViewById(R.id.teacherToken_txt_token);
+        mToken = this.findViewById(R.id.principal_lbl_asis3);
         mSwt = this.findViewById(R.id.teacherToken_swt_enable);
         mPresenter = new TeacherTokenPresenter(this);
 

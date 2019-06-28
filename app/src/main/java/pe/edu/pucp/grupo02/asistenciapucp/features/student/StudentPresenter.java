@@ -9,6 +9,7 @@ import java.net.UnknownHostException;
 import pe.edu.pucp.grupo02.asistenciapucp.R;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.ApiAdapter;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.in.LoginInRO;
+import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.StudentAttendanceOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.StudentMessagesOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.utils.Utilities;
 import retrofit2.Call;
@@ -34,7 +35,7 @@ public class StudentPresenter implements IStudentPresenter{
         call.enqueue(new Callback<StudentMessagesOutRO>() {
             @Override
             public void onResponse(@NonNull Call<StudentMessagesOutRO> call, @NonNull Response<StudentMessagesOutRO> response) {
-                processUserResponse(response);
+                processAnunciosResponse(response);
             }
 
             @Override
@@ -52,9 +53,33 @@ public class StudentPresenter implements IStudentPresenter{
         });
     }
 
-    private void processUserResponse(Response<StudentMessagesOutRO> response) {
+    public void asistenciaRest() {
+        LoginInRO loginInRO = new LoginInRO(ApiAdapter.APPLICATION_NAME, "o", "o");
+        Call<StudentAttendanceOutRO> call = ApiAdapter.getInstance().attendance(loginInRO);
+        call.enqueue(new Callback<StudentAttendanceOutRO>() {
+            @Override
+            public void onResponse(@NonNull Call<StudentAttendanceOutRO> call, @NonNull Response<StudentAttendanceOutRO> response) {
+                processAsistenciaResponse(response);
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<StudentAttendanceOutRO> call, @NonNull Throwable t) {
+                if (t instanceof UnknownHostException) {
+                    // No se encontró la URL, preguntar si se desea iniciar sesión
+                    // sin conexión
+                    view.askForMessagesOffline();
+                } else {
+                    // Mostrar mensaje de error en el logcat y en un cuadro de diálogo
+                    t.printStackTrace();
+                    view.showErrorDialog(t.getMessage());
+                }
+            }
+        });
+    }
+
+    private void processAnunciosResponse(Response<StudentMessagesOutRO> response) {
         // Verificar respuesta del servidor REST
-        Pair<StudentMessagesOutRO, String> result = validateResponse(response);
+        Pair<StudentMessagesOutRO, String> result = validateAnunciosResponse(response);
         if (result.first == null) {
             // Mostrar mensaje de error
             view.showErrorDialog(result.second);
@@ -66,7 +91,21 @@ public class StudentPresenter implements IStudentPresenter{
         }
     }
 
-    private Pair<StudentMessagesOutRO, String> validateResponse(Response<StudentMessagesOutRO> response) {
+    private void processAsistenciaResponse(Response<StudentAttendanceOutRO> response) {
+        // Verificar respuesta del servidor REST
+        Pair<StudentAttendanceOutRO, String> result = validateAttendanceResponse(response);
+        if (result.first == null) {
+            // Mostrar mensaje de error
+            view.showErrorDialog(result.second);
+        } else {
+            // Obtener el objeto JSON
+            StudentAttendanceOutRO studentAttendanceRO = result.first;
+            // Ir a la pantalla de mensajes
+            view.gotoStudentAttendance(studentAttendanceRO.getPorce1(), studentAttendanceRO.getPorce2(), studentAttendanceRO.getPorce3());
+        }
+    }
+
+    private Pair<StudentMessagesOutRO, String> validateAnunciosResponse(Response<StudentMessagesOutRO> response) {
         Context context = view.getContext();
         // Verificar que la respuesta es satisfactoria
         if (!response.isSuccessful()) {
@@ -92,6 +131,31 @@ public class StudentPresenter implements IStudentPresenter{
         return new Pair<>(null, message);
     }
 
+    private Pair<StudentAttendanceOutRO, String> validateAttendanceResponse(Response<StudentAttendanceOutRO> response) {
+        Context context = view.getContext();
+        // Verificar que la respuesta es satisfactoria
+        if (!response.isSuccessful()) {
+            String message = Utilities.formatString(context, R.string.api_dlg_error_msg_http, response.code());
+            return new Pair<>(null, message);
+        }
+        // Verificar el contenido de la respuesta en JSON
+        StudentAttendanceOutRO studentAttendanceRO = response.body();
+        if (studentAttendanceRO == null) {
+            String message = Utilities.formatString(context, R.string.api_dlg_error_msg_empty);
+            return new Pair<>(null, message);
+        }
+        // Verificar que la respuesta no indique un error
+        int errorCode = studentAttendanceRO.getErrorCode();
+        String message = studentAttendanceRO.getMessage();
+        if (errorCode == 0) {
+            return new Pair<>(studentAttendanceRO, message); // Respuesta sin errores
+        }
+        // Verificar que el mensaje de error no está vacío
+        if (message == null || message.isEmpty()) {
+            message = Utilities.formatString(context, R.string.api_dlg_error_msg_rest, errorCode);
+        }
+        return new Pair<>(null, message);
+    }
 
     @Override
     public void messagesOffline() {

@@ -74,6 +74,15 @@
             android:text="@string/studentToken_txt_token"
             android:textSize="18sp" />
 
+        <TextView
+            android:id="@+id/studentToken_lbl_token_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100"
+            android:layout_marginRight="100"
+            android:padding="10dp"
+            android:text="@string/studentToken_lbl_token_empty" />
+
         <Button
             android:id="@+id/studentToken_btn_send"
             android:layout_width="wrap_content"

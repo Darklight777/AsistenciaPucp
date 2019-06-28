@@ -100,9 +100,6 @@ public class TeacherActivity extends AppCompatActivity implements ITeacherView{
         }
 
     }
-
-
-
     public void MoverAGenerarToken(String name, String sch, String time){
         Intent siguiente = new Intent(this, TeacherTokenActivity.class);
         siguiente.putExtra(TEACHER_TOKEN_EXTRA_COURSENAME, name);

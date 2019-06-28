@@ -3,20 +3,18 @@ package pe.edu.pucp.grupo02.asistenciapucp.features.teacher.messages;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatSpinner;
 import android.view.View;
-import android.widget.TextView;
 
 import pe.edu.pucp.grupo02.asistenciapucp.R;
-import pe.edu.pucp.grupo02.asistenciapucp.features.principal.PrincipalActivity;
-import pe.edu.pucp.grupo02.asistenciapucp.features.student.StudentActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.TeacherActivity;
 
 public class TeacherMessagesActivity extends AppCompatActivity {
 
     private final static String TAG = "AP_TEACHER_ATTENDANCE_VIEW";
 
-    private TextView mCourse;
-    private TextView mSchedule;
+    private AppCompatSpinner mCourse;
+    private AppCompatSpinner mSchedule;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +24,7 @@ public class TeacherMessagesActivity extends AppCompatActivity {
         mCourse = super.findViewById(R.id.teacherMessages_spn_course);
         mSchedule = super.findViewById(R.id.teacherMessages_spn_schedule);
 
-        showInfo();
+        //showInfo();
     }
 
     public void retroceder(View view){
@@ -34,6 +32,7 @@ public class TeacherMessagesActivity extends AppCompatActivity {
         startActivity(anterior);
     }
 
+    /*
     private void showInfo() {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -44,7 +43,7 @@ public class TeacherMessagesActivity extends AppCompatActivity {
             mCourse.setText(curso);
             mSchedule.setText(horario);
         }
-    }
+    }*/
 
 
 }

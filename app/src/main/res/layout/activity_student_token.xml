@@ -93,6 +93,7 @@
             android:id="@+id/editText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="16dp"
             android:ems="10"
             android:hint="@string/studentToken_txt_marcado"
             android:inputType="textPersonName" />
@@ -114,6 +115,7 @@
             android:layout_gravity="center"
             android:background="#26A69A"
             android:gravity="center"
+            android:onClick="marcarAsistencia"
             android:paddingBottom="16dp"
             android:text="@string/studentToken_btn_send"
             android:textAlignment="center"

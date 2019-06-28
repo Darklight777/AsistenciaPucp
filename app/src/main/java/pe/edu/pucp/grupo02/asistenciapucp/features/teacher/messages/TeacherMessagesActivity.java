@@ -37,17 +37,22 @@ public class TeacherMessagesActivity extends AppCompatActivity {
 
     private void showInfo()
     {
-        mCourse3.setText("xd");
-        mCourse2.setText("xd");
-        mCourse1.setText("xd");
+        String test = "12";
+        mCourse3.setText(test);
+        mCourse2.setText(test);
+        mCourse1.setText(test);
 
         Bundle extras = getIntent().getExtras();
 
-        if (extras != null) {
+        if (false){//extras != null) {
 
-            mCourse1.setText(extras.getString(TeacherActivity.TEACHER_ATTENDANCE_EXTRA_P1));
-            mCourse2.setText(extras.getString(TeacherActivity.TEACHER_ATTENDANCE_EXTRA_P2));
-            mCourse3.setText(extras.getString(TeacherActivity.TEACHER_ATTENDANCE_EXTRA_P3));
+            String c1 = extras.getString(TeacherActivity.TEACHER_ATTENDANCE_EXTRA_P1);
+            String c2 = extras.getString(TeacherActivity.TEACHER_ATTENDANCE_EXTRA_P2);
+            String c3 = extras.getString(TeacherActivity.TEACHER_ATTENDANCE_EXTRA_P3);
+
+            mCourse1.setText(c1);
+            mCourse2.setText(c2);
+            mCourse3.setText(c3);
 
         }
     }

@@ -12,6 +12,8 @@ public interface IStudentPresenter extends IPresenter {
 
     void anunciosRest();
 
+    void tokenRest();
+
     void asistenciaRest();
 
     void messagesOffline();

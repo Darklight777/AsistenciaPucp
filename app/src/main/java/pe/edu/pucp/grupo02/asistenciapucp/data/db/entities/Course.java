@@ -6,7 +6,8 @@ import android.arch.persistence.room.PrimaryKey;
 
 
 @Entity(tableName = "COURSE")
-public class Course {
+public class Course{
+
     @PrimaryKey
     @ColumnInfo(name = "COURSE_ID")
     private int courseId;
@@ -14,7 +15,13 @@ public class Course {
     @ColumnInfo(name = "COURSE_NAME")
     private String courseName;
 
+    public Course(int courseId, String courseName) {
+        this.courseId = courseId;
+        this.courseName = courseName;
+    }
+
     public int getCourseId() { return courseId; }
 
     public String getCourseName() { return courseName; }
+
 }

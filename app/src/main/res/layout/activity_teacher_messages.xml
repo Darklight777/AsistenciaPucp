@@ -64,8 +64,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="50dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/teacherMessages_txt_message" />
+            android:hint="@string/teacherMessages_txt_message"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/teacherMessages_btn_announce"

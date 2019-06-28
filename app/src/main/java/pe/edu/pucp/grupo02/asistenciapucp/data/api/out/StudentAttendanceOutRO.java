@@ -16,9 +16,9 @@ public class StudentAttendanceOutRO extends BaseOutRO {
     public StudentAttendanceOutRO(@JsonProperty("errorCode") int errorCode,
                                   @JsonProperty("message") String message,
                                   @JsonProperty("userId") int userId,
-                                  @JsonProperty("porce1") String porce1,
-                                  @JsonProperty("porce2") String porce2,
-                                  @JsonProperty("porce3") String porce3) {
+                                  @JsonProperty("porc1") String porce1,
+                                  @JsonProperty("porc2") String porce2,
+                                  @JsonProperty("porc3") String porce3) {
         super(errorCode, message);
         this.userId = userId;
         this.porce1 = porce1;

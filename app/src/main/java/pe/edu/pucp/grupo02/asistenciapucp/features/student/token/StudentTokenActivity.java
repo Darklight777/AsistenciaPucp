@@ -36,7 +36,7 @@ public class StudentTokenActivity extends AppCompatActivity {
         mCourseSchedule = super.findViewById(R.id.studentToken_txt_schedule);
         mCourseTime = super.findViewById(R.id.studentToken_txt_time);
         mToken = this.findViewById(R.id.studentToken_txt_token);
-        mPresenter = new StudentTokenPresenter(this);
+        //mPresenter = new StudentTokenPresenter(this);
         showInfo();
     }
 
@@ -71,7 +71,7 @@ public class StudentTokenActivity extends AppCompatActivity {
         startActivity(anterior);
     }
 
-    @Override
+    //Override
     public Context getContext() {
         return this;
     }

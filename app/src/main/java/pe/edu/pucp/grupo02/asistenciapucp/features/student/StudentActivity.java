@@ -109,6 +109,10 @@ public class StudentActivity extends AppCompatActivity implements IStudentView{
         startActivity(siguiente);
     }
 
+    public void gotoStudentAttendance(String porce1, String porce2, String porce3) {
+
+    }
+
     @Override
     public Context getContext() { return this; }
 

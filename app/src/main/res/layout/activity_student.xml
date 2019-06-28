@@ -33,7 +33,7 @@
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="32dp"
         android:background="#26A69A"
-        android:onClick="MoverAStudentAMessages"
+        android:onClick="MoverAStudentMessages"
         android:scaleX="0.8"
         android:scaleY="0.8"
         app:layout_constraintBottom_toBottomOf="parent"

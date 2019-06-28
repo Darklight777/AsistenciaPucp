@@ -13,10 +13,6 @@ import pe.edu.pucp.grupo02.asistenciapucp.features.principal.PrincipalActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.student.attendance.StudentAttendanceActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.student.messages.StudentMessagesActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.student.token.StudentTokenActivity;
-import pe.edu.pucp.grupo02.asistenciapucp.utils.Utilities;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class StudentActivity extends AppCompatActivity implements IStudentView{
 

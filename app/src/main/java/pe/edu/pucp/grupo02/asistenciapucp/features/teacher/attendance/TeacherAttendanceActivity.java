@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import pe.edu.pucp.grupo02.asistenciapucp.R;
-import pe.edu.pucp.grupo02.asistenciapucp.features.principal.PrincipalActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.TeacherActivity;
 
 public class TeacherAttendanceActivity extends AppCompatActivity {

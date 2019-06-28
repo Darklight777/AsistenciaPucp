@@ -9,6 +9,7 @@ import java.net.UnknownHostException;
 import pe.edu.pucp.grupo02.asistenciapucp.R;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.ApiAdapter;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.in.LoginInRO;
+import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.StudentAttendanceOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.StudentMessagesOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.utils.Utilities;
 import retrofit2.Call;
@@ -34,7 +35,7 @@ public class StudentPresenter implements IStudentPresenter{
         call.enqueue(new Callback<StudentMessagesOutRO>() {
             @Override
             public void onResponse(@NonNull Call<StudentMessagesOutRO> call, @NonNull Response<StudentMessagesOutRO> response) {
-                processUserResponse(response);
+                processAnunciosResponse(response);
             }
 
             @Override
@@ -52,7 +53,31 @@ public class StudentPresenter implements IStudentPresenter{
         });
     }
 
-    private void processUserResponse(Response<StudentMessagesOutRO> response) {
+    public void asistenciaRest() {
+        LoginInRO loginInRO = new LoginInRO(ApiAdapter.APPLICATION_NAME, "o", "o");
+        Call<StudentAttendanceOutRO> call = ApiAdapter.getInstance().attendance(loginInRO);
+        call.enqueue(new Callback<StudentAttendanceOutRO>() {
+            @Override
+            public void onResponse(@NonNull Call<StudentAttendanceOutRO> call, @NonNull Response<StudentAttendanceOutRO> response) {
+                processAsistenciaResponse(response);
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<StudentAttendanceOutRO> call, @NonNull Throwable t) {
+                if (t instanceof UnknownHostException) {
+                    // No se encontró la URL, preguntar si se desea iniciar sesión
+                    // sin conexión
+                    view.askForMessagesOffline();
+                } else {
+                    // Mostrar mensaje de error en el logcat y en un cuadro de diálogo
+                    t.printStackTrace();
+                    view.showErrorDialog(t.getMessage());
+                }
+            }
+        });
+    }
+
+    private void processAnunciosResponse(Response<StudentMessagesOutRO> response) {
         // Verificar respuesta del servidor REST
         Pair<StudentMessagesOutRO, String> result = validateResponse(response);
         if (result.first == null) {

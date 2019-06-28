@@ -33,8 +33,10 @@
     <string name="teacherToken_txt_schedule">Horario</string>
     <string name="teacherToken_txt_time">Hora</string>
     <string name="teacherToken_btn_generate">Generar</string>
-    <string name="teacherToken_swt_enable">Activar</string>
+    <string name="teacherToken_swt_enable">Activado</string>
+    <string name="teacherToken_swt_disable">Desactivado</string>
     <string name="teacherToken_txt_token">123456</string>
+
 
     <!--teacher  messages -->
     <string name="teacherMessages_spn_schedule">Horario</string>

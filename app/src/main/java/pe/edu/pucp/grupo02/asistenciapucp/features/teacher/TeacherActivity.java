@@ -27,19 +27,24 @@ public class TeacherActivity extends AppCompatActivity {
         startActivity(anterior);
     }
 
-
     public void MoverAGenerarToken(View view){
+
+           String name = "Nombre del curso";
+           String sch = "Schedule";
+           String time = "Time 0:00";
+           GenerarToken(name,sch,time);
+
+    }
+
+    public void GenerarToken(String name, String sch, String time){
         Intent siguiente = new Intent(this, TeacherTokenActivity.class);
-
-        String name = "Nombre del curso";
-        String sch = "Schedule";
-        String time = "Time 0:00";
-
         siguiente.putExtra(TEACHER_EXTRA_COURSENAME, name);
         siguiente.putExtra(TEACHER_EXTRA_COURSESCH, sch);
         siguiente.putExtra(TEACHER_EXTRA_COURSETIME, time);
         startActivity(siguiente);
+        //finish();
     }
+
     public void MoverATeacherAttendance(View view){
         Intent siguiente = new Intent(this, TeacherAttendanceActivity.class);
         startActivity(siguiente);

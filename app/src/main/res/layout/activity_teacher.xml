@@ -14,7 +14,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="18dp"
         android:background="#26A69A"
-        android:onClick="MoverAGenerarToken"
+        android:onClick="token"
         android:scaleX="0.8"
         android:scaleY="0.8"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
@@ -33,7 +33,7 @@
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="32dp"
         android:background="#26A69A"
-        android:onClick="MoverATeacherAMessages"
+        android:onClick="messages"
         android:scaleX="0.8"
         android:scaleY="0.8"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,7 +50,7 @@
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="32dp"
         android:background="#26A69A"
-        android:onClick="MoverATeacherAttendance"
+        android:onClick="attendance"
         android:scaleX="0.8"
         android:scaleY="0.8"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -77,7 +77,7 @@
         app:layout_constraintVertical_bias="0.756" />
 
     <TextView
-        android:id="@+id/teacherToken_txt_token"
+        android:id="@+id/teacher_txt_announce"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

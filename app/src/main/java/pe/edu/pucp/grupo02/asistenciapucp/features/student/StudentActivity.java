@@ -20,7 +20,8 @@ import retrofit2.Response;
 
 public class StudentActivity extends AppCompatActivity implements IStudentView{
 
-    private final static String TAG = "MFL_STUDENT_VIEW";
+    //TAG = AsistenciaPucp_STUDENT ....
+    private final static String TAG = "AP_STUDENT_VIEW";
     public final static String STUDENT_MSJE1 = "STUDENT_MSJE1";
     public final static String STUDENT_MSJE2 = "STUDENT_MSJE2";
     public final static String STUDENT_MSJE3 = "STUDENT_MSJE3";

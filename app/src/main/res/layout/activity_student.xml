@@ -8,7 +8,7 @@
     tools:context=".features.student.StudentActivity">
 
     <ImageButton
-        android:id="@+id/teacher_btn_token"
+        android:id="@+id/student_btn_token"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -17,7 +17,7 @@
         android:onClick="MoverAIngresarToken"
         android:scaleX="0.8"
         android:scaleY="0.8"
-        app:layout_constraintBottom_toTopOf="@+id/teacher_btn_attendance"
+        app:layout_constraintBottom_toTopOf="@+id/student_btn_attendance"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -26,7 +26,7 @@
         app:srcCompat="@drawable/varita_v2" />
 
     <ImageButton
-        android:id="@+id/teacher_btn_messages"
+        android:id="@+id/student_btn_messages"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -37,14 +37,14 @@
         android:scaleX="0.8"
         android:scaleY="0.8"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/teacher_btn_attendance"
+        app:layout_constraintEnd_toStartOf="@+id/student_btn_attendance"
         app:layout_constraintHorizontal_bias="0.326"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:srcCompat="@drawable/bocina_v2" />
 
     <ImageButton
-        android:id="@+id/teacher_btn_attendance"
+        android:id="@+id/student_btn_attendance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -69,15 +69,15 @@
         android:text="Ingresar Token"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/teacher_btn_token"
+        app:layout_constraintBottom_toBottomOf="@+id/student_btn_token"
         app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/teacher_btn_token"
+        app:layout_constraintTop_toTopOf="@+id/student_btn_token"
         app:layout_constraintVertical_bias="0.725" />
 
     <TextView
-        android:id="@+id/teacherToken_txt_token"
+        android:id="@+id/student_txt_token"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -88,11 +88,11 @@
         android:text="Ver Anuncios"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/teacher_btn_messages"
-        app:layout_constraintEnd_toEndOf="@+id/teacher_btn_messages"
+        app:layout_constraintBottom_toBottomOf="@+id/student_btn_messages"
+        app:layout_constraintEnd_toEndOf="@+id/student_btn_messages"
         app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toStartOf="@+id/teacher_btn_messages"
-        app:layout_constraintTop_toTopOf="@+id/teacher_btn_messages"
+        app:layout_constraintStart_toStartOf="@+id/student_btn_messages"
+        app:layout_constraintTop_toTopOf="@+id/student_btn_messages"
         app:layout_constraintVertical_bias="0.756" />
 
     <TextView
@@ -107,11 +107,11 @@
         android:text="Ver Asistencia"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/teacher_btn_attendance"
-        app:layout_constraintEnd_toEndOf="@+id/teacher_btn_attendance"
+        app:layout_constraintBottom_toBottomOf="@+id/student_btn_attendance"
+        app:layout_constraintEnd_toEndOf="@+id/student_btn_attendance"
         app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="@+id/teacher_btn_attendance"
-        app:layout_constraintTop_toTopOf="@+id/teacher_btn_attendance"
+        app:layout_constraintStart_toStartOf="@+id/student_btn_attendance"
+        app:layout_constraintTop_toTopOf="@+id/student_btn_attendance"
         app:layout_constraintVertical_bias="0.768" />
 
     <ImageButton

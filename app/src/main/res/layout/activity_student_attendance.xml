@@ -91,11 +91,11 @@
                 android:id="@+id/student_txt_firstscore"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:text="@string/student_txt_porcentaje"
                 android:textColor="#000000"
                 android:textSize="36sp"
                 android:textStyle="bold"
-                android:visibility="visible"
-                tools:text="@string/student_txt_porcentaje" />
+                android:visibility="visible" />
         </LinearLayout>
 
 
@@ -145,11 +145,11 @@
                 android:id="@+id/student_txt_secondscore"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:text="@string/student_txt_porcentaje"
                 android:textColor="#000000"
                 android:textSize="36sp"
                 android:textStyle="bold"
-                android:visibility="visible"
-                tools:text="@string/student_txt_porcentaje" />
+                android:visibility="visible" />
 
         </LinearLayout>
 
@@ -199,11 +199,11 @@
                 android:layout_width="wrap_content"
 
                 android:layout_height="match_parent"
+                android:text="@string/student_txt_porcentaje"
                 android:textColor="#000000"
                 android:textSize="36sp"
                 android:textStyle="bold"
-                android:visibility="visible"
-                tools:text="@string/student_txt_porcentaje" />
+                android:visibility="visible" />
 
         </LinearLayout>
 

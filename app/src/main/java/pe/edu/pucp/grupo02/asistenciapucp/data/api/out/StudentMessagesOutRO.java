@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.base.BaseOutRO;
 
 @JsonRootName("studentMessagesRO")
-public class StudentMessagesRO extends BaseOutRO {
+public class StudentMessagesOutRO extends BaseOutRO {
 
     private int userId;
     private String message1;
@@ -15,12 +15,12 @@ public class StudentMessagesRO extends BaseOutRO {
     private String message3;
 
     @JsonCreator
-    public StudentMessagesRO(@JsonProperty("errorCode") int errorCode,
-                             @JsonProperty("message") String message,
-                             @JsonProperty("userId") int userId,
-                             @JsonProperty("msje1") String message1,
-                             @JsonProperty("msje2") String message2,
-                             @JsonProperty("msje3") String message3) {
+    public StudentMessagesOutRO(@JsonProperty("errorCode") int errorCode,
+                                @JsonProperty("message") String message,
+                                @JsonProperty("userId") int userId,
+                                @JsonProperty("msje1") String message1,
+                                @JsonProperty("msje2") String message2,
+                                @JsonProperty("msje3") String message3) {
         super(errorCode, message);
         this.userId = userId;
         this.message1 = message1;

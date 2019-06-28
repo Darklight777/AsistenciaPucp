@@ -1,6 +1,7 @@
 package pe.edu.pucp.grupo02.asistenciapucp.features.student;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v4.util.Pair;
 
 import java.net.UnknownHostException;
@@ -8,7 +9,7 @@ import java.net.UnknownHostException;
 import pe.edu.pucp.grupo02.asistenciapucp.R;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.ApiAdapter;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.in.LoginInRO;
-import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.StudentMessagesRO;
+import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.StudentMessagesOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.utils.Utilities;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -16,7 +17,7 @@ import retrofit2.Response;
 
 public class StudentPresenter implements IStudentPresenter{
 
-    private final static String TAG = "MFL_STUDENT_PRESENTER";
+    private final static String TAG = "AP_STUDENT_PRESENTER";
     private IStudentView view;
 
     public StudentPresenter(IStudentView view) {
@@ -29,15 +30,15 @@ public class StudentPresenter implements IStudentPresenter{
 
     public void anunciosRest() {
         LoginInRO loginInRO = new LoginInRO(ApiAdapter.APPLICATION_NAME, "o", "o");
-        Call<StudentMessagesRO> call = ApiAdapter.getInstance().announcements(loginInRO);
-        call.enqueue(new Callback<StudentMessagesRO>() {
+        Call<StudentMessagesOutRO> call = ApiAdapter.getInstance().announcements(loginInRO);
+        call.enqueue(new Callback<StudentMessagesOutRO>() {
             @Override
-            public void onResponse(Call<StudentMessagesRO> call, Response<StudentMessagesRO> response) {
+            public void onResponse(@NonNull Call<StudentMessagesOutRO> call, @NonNull Response<StudentMessagesOutRO> response) {
                 processUserResponse(response);
             }
 
             @Override
-            public void onFailure(Call<StudentMessagesRO> call, Throwable t) {
+            public void onFailure(@NonNull Call<StudentMessagesOutRO> call, @NonNull Throwable t) {
                 if (t instanceof UnknownHostException) {
                     // No se encontró la URL, preguntar si se desea iniciar sesión
                     // sin conexión
@@ -51,21 +52,21 @@ public class StudentPresenter implements IStudentPresenter{
         });
     }
 
-    private void processUserResponse(Response<StudentMessagesRO> response) {
+    private void processUserResponse(Response<StudentMessagesOutRO> response) {
         // Verificar respuesta del servidor REST
-        Pair<StudentMessagesRO, String> result = validateResponse(response);
+        Pair<StudentMessagesOutRO, String> result = validateResponse(response);
         if (result.first == null) {
             // Mostrar mensaje de error
             view.showErrorDialog(result.second);
         } else {
             // Obtener el objeto JSON
-            StudentMessagesRO studentMessagesRO = result.first;
+            StudentMessagesOutRO studentMessagesRO = result.first;
             // Ir a la pantalla de mensajes
             view.gotoStudentMessages(studentMessagesRO.getMessage1(), studentMessagesRO.getMessage2(), studentMessagesRO.getMessage3());
         }
     }
 
-    private Pair<StudentMessagesRO, String> validateResponse(Response<StudentMessagesRO> response) {
+    private Pair<StudentMessagesOutRO, String> validateResponse(Response<StudentMessagesOutRO> response) {
         Context context = view.getContext();
         // Verificar que la respuesta es satisfactoria
         if (!response.isSuccessful()) {
@@ -73,7 +74,7 @@ public class StudentPresenter implements IStudentPresenter{
             return new Pair<>(null, message);
         }
         // Verificar el contenido de la respuesta en JSON
-        StudentMessagesRO studentMessagesRO = response.body();
+        StudentMessagesOutRO studentMessagesRO = response.body();
         if (studentMessagesRO == null) {
             String message = Utilities.formatString(context, R.string.api_dlg_error_msg_empty);
             return new Pair<>(null, message);

@@ -28,6 +28,12 @@
     <string name="api_dlg_error_msg_rest">El servicio otorgó un error.\nCódigo de error: %d</string>
     <string name="api_dlg_error_msg_empty">El servicio no otorgó respuesta.</string>
 
+
+
+    <!--teacher-->
+    <string name="teacher_dlg_error_title">Error al ingresar</string>
+    <string name="teacher_msg_loading">Ingresando</string>
+
     <!--teacher token -->
     <string name="teacherToken_txt_courseName">Nombre del curso</string>
     <string name="teacherToken_txt_schedule">Horario</string>
@@ -58,4 +64,9 @@
     <string name="student_lbl_thirdcourse">Programacion en Dispositivos Moviles: </string>
     <string name="student_txt_porcentaje">  %</string>
 
+    <!--teacher attendance control -->
+    <string name="teacherAttendance_txt_porcentaje">%</string>
+    <string name="teacherAttendance_lbl_firstcourse">curso1</string>
+    <string name="teacherAttendance_lbl_secondcourse">curso2</string>
+    <string name="teacherAttendance_lbl_thirdcourse">curso3</string>
 </resources>

@@ -22,6 +22,10 @@ public class StudentActivity extends AppCompatActivity implements IStudentView{
     public final static String STUDENT_MSJE2 = "STUDENT_MSJE2";
     public final static String STUDENT_MSJE3 = "STUDENT_MSJE3";
 
+    public final static String STUDENT_PORC1 = "STUDENT_PORC1";
+    public final static String STUDENT_PORC2 = "STUDENT_PORC2";
+    public final static String STUDENT_PORC3 = "STUDENT_PORC3";
+
     private IStudentPresenter mPresenter;
 
     @Override
@@ -40,8 +44,11 @@ public class StudentActivity extends AppCompatActivity implements IStudentView{
         startActivity(siguiente);
     }
     public void MoverAStudentAttendance(View view){
-        Intent siguiente = new Intent(this, StudentAttendanceActivity.class);
-        startActivity(siguiente);
+        // Validar datos del usuario
+        if (mPresenter.verifyMessagesData()) {
+            // Mostrar mensajes
+            mPresenter.asistenciaRest();
+        }
     }
 
     public void MoverAStudentMessages(View view) {
@@ -76,6 +83,15 @@ public class StudentActivity extends AppCompatActivity implements IStudentView{
                 .show();
     }
 
+    public void gotoStudentAttendance(String porce1, String porce2, String porce3){
+        // Iniciar la actividad de porcentaje de asistencias
+        Intent siguiente = new Intent(this, StudentAttendanceActivity.class);
+        siguiente.putExtra(STUDENT_PORC1, porce1);
+        siguiente.putExtra(STUDENT_PORC2, porce2);
+        siguiente.putExtra(STUDENT_PORC3, porce3);
+        startActivity(siguiente);
+    }
+
     public void gotoStudentMessages(String msje1, String msje2, String msje3){
         // Iniciar la actividad de mensajes de estudiantes
         Intent siguiente = new Intent(this, StudentMessagesActivity.class);
@@ -86,9 +102,7 @@ public class StudentActivity extends AppCompatActivity implements IStudentView{
     }
 
     @Override
-    public Context getContext() {
-        return this;
-    }
+    public Context getContext() { return this; }
 
     @Override
     public void onDestroy() {

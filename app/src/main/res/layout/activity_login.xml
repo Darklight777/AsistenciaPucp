@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="#FFFFFF"
     tools:context=".features.login.LoginActivity">
 
 
     <TextView
         android:id="@+id/login_txt_title"
-        android:layout_width="340dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="40dp"
         android:text="@string/login_txt_title"
         android:textAllCaps="false"
@@ -25,11 +25,11 @@
 
     <EditText
         android:id="@+id/login_ipt_username"
-        android:layout_width="340dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="36dp"
         android:background="#eeeeee"
         android:ems="10"
         android:hint="@string/login_ipt_username"
@@ -42,10 +42,10 @@
 
     <EditText
         android:id="@+id/login_ipt_password"
-        android:layout_width="340dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="36dp"
         android:background="#eeeeee"
         android:ems="10"
@@ -53,16 +53,16 @@
         android:inputType="textPassword"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_ipt_username" />
 
     <Button
         android:id="@+id/login_btn_submit"
-        android:layout_width="211dp"
-        android:layout_height="48dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="36dp"
         android:height="50dp"
         android:background="#26A69A"
@@ -81,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="8dp"
         android:scaleX="0.8"
         android:scaleY="0.8"

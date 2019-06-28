@@ -20,6 +20,8 @@ public class TeacherTokenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_token);
+
+        showInfo();
     }
 
     Switch swt = (Switch) findViewById(R.id.teacherToken_swt_enable);
@@ -44,6 +46,10 @@ public class TeacherTokenActivity extends AppCompatActivity {
             String courseName = extras.getString(TeacherActivity.TEACHER_EXTRA_COURSENAME);
             String courseSch = extras.getString(TeacherActivity.TEACHER_EXTRA_COURSESCH);
             String courseTime = extras.getString(TeacherActivity.TEACHER_EXTRA_COURSETIME);
+
+            ((TextView) findViewById(R.id.teacherToken_txt_courseName)).setText(courseName);
+            ((TextView) findViewById(R.id.teacherToken_txt_schedule)).setText(courseSch);
+            ((TextView) findViewById(R.id.teacherToken_txt_time)).setText(courseTime);
         }
 
 

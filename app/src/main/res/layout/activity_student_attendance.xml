@@ -188,7 +188,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/teacherToken_txt_token"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:textAlignment="textEnd"

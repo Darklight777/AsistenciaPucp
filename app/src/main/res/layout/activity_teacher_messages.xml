@@ -59,7 +59,7 @@
             android:text="@string/teacherMessages_txt_message" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/teacherMessages_btn_announce"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"

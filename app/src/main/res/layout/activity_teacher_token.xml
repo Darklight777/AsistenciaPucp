@@ -53,18 +53,18 @@
             android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="16dp"
+            android:onClick="generarToken"
             android:text="@string/teacherToken_btn_generate"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/teacherToken_txt_token"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="60dp"
             android:layout_marginBottom="16dp"
-            android:text="@string/teacherToken_txt_token"
             android:textAlignment="center"
             android:textSize="30sp" />
 

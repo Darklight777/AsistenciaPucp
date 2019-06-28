@@ -59,6 +59,12 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/lbl_student_token_horario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="34sp" />
+
+        <TextView
             android:id="@+id/studentToken_txt_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -67,12 +73,26 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/lbl_student_token_hora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="34sp" />
+
+        <TextView
             android:id="@+id/studentToken_txt_token"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/studentToken_txt_token"
             android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/studentToken_txt_marcado"
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/studentToken_lbl_token_empty"

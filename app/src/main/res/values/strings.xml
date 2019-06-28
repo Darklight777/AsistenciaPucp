@@ -57,6 +57,7 @@
     <string name="studentToken_txt_token">Token: </string>
     <string name="studentToken_lbl_token_empty"> </string>
     <string name="studentToken_btn_send">Marcar Asistencia</string>
+    <string name="studentToken_txt_marcado">Ingrese su token</string>
 
     <!--student attendance control -->
     <string name="student_txt_tittle">ASISTENCIA</string>

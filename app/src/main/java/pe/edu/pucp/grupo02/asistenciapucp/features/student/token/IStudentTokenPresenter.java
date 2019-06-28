@@ -4,7 +4,7 @@ import pe.edu.pucp.grupo02.asistenciapucp.features.base.IPresenter;
 
 public interface IStudentTokenPresenter extends IPresenter {
 
-    void showToken(String token);
+    boolean verifyTokenData(String courseN, String courseS, String courseT);
 
-    void showErrorDialog(String message);
+    void tokenRest(String courseN, String courseS, String courseT);
 }

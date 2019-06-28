@@ -13,6 +13,10 @@ import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.token.TeacherTokenAct
 
 public class TeacherActivity extends AppCompatActivity {
 
+    public final static String TEACHER_EXTRA_COURSENAME = "TEACHER_EXTRA_COURSENAME";
+    public final static String TEACHER_EXTRA_COURSETIME = "TEACHER_EXTRA_COURSETIME";
+    public final static String TEACHER_EXTRA_COURSESCH = "TEACHER_EXTRA_COURSESCH";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +26,8 @@ public class TeacherActivity extends AppCompatActivity {
         Intent anterior = new Intent(this, PrincipalActivity.class);
         startActivity(anterior);
     }
+
+
     public void MoverAGenerarToken(View view){
         Intent siguiente = new Intent(this, TeacherTokenActivity.class);
         startActivity(siguiente);

@@ -11,7 +11,7 @@ import java.util.Random;
 
 import pe.edu.pucp.grupo02.asistenciapucp.R;
 import pe.edu.pucp.grupo02.asistenciapucp.features.student.messages.StudentMessagesActivity;
-
+import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.TeacherActivity;
 
 
 public class TeacherTokenActivity extends AppCompatActivity {
@@ -35,5 +35,17 @@ public class TeacherTokenActivity extends AppCompatActivity {
         {
             //falta
         }
+    }
+
+    private void showInfo(){
+        Bundle extras = getIntent().getExtras();
+        if (extras != null)
+        {
+            String courseName = extras.getString(TeacherActivity.TEACHER_EXTRA_COURSENAME);
+            String courseSch = extras.getString(TeacherActivity.TEACHER_EXTRA_COURSESCH);
+            String courseTime = extras.getString(TeacherActivity.TEACHER_EXTRA_COURSETIME);
+        }
+
+
     }
 }

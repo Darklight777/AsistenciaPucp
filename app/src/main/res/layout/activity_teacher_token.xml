@@ -74,7 +74,11 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
             android:layout_marginRight="100dp"
-            android:text="@string/teacherToken_swt_enable" />
+            android:checked="true"
+            android:onClick="swtOnClick"
+            android:text="@string/teacherToken_swt_enable"
+            android:textOff="Desactivado"
+            android:textOn="Activado" />
 
     </LinearLayout>
 </ScrollView>

@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.Random;
 
 import pe.edu.pucp.grupo02.asistenciapucp.R;
 import pe.edu.pucp.grupo02.asistenciapucp.features.student.messages.StudentMessagesActivity;
+
+
 
 public class TeacherTokenActivity extends AppCompatActivity {
 
@@ -19,8 +22,18 @@ public class TeacherTokenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_teacher_token);
     }
 
-    public void generarToken(View view){
+    Switch swt = (Switch) findViewById(R.id.teacherToken_swt_enable);
+
+    public void generateToken(View view){
+
         int random = new  Random().nextInt(10000) + 10000;
         ((TextView) findViewById(R.id.teacherToken_txt_token)).setText(String.valueOf(random));
+    }
+
+    public  void swtOnClick(View view){
+        if (! swt.isChecked())
+        {
+            //falta
+        }
     }
 }

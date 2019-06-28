@@ -5,7 +5,7 @@
     android:id="@+id/scrollView2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#26A69A"
+    android:background="#FFFFFF"
     tools:context=".features.student.token.StudentTokenActivity">
 
 
@@ -41,12 +41,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="112dp"
         android:layout_marginEnd="18dp"
         android:orientation="vertical"
         android:paddingBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -56,13 +56,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/studentToken_txt_schedule"
-            android:textSize="18sp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/lbl_student_token_horario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="34sp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/studentToken_txt_time"
@@ -70,13 +71,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/studentToken_txt_time"
-            android:textSize="18sp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/lbl_student_token_hora"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="34sp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/studentToken_txt_token"
@@ -84,12 +86,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/studentToken_txt_token"
-            android:textSize="18sp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="16dp"
             android:ems="10"
             android:hint="@string/studentToken_txt_marcado"
             android:inputType="textPersonName" />
@@ -101,16 +105,23 @@
             android:layout_marginLeft="100dp"
             android:layout_marginRight="100dp"
             android:padding="10dp"
-            android:text="@string/studentToken_lbl_token_empty" />
+            android:text="@string/studentToken_lbl_token_empty"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/studentToken_btn_send"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
+            android:background="#26A69A"
             android:gravity="center"
+            android:onClick="marcarAsistencia"
             android:paddingBottom="16dp"
-            android:text="@string/studentToken_btn_send" />
+            android:text="@string/studentToken_btn_send"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

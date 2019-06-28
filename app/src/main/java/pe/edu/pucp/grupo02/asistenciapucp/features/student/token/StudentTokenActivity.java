@@ -72,12 +72,14 @@ public class StudentTokenActivity extends AppCompatActivity {
         startActivity(anterior);
     }
 
-    public void showErrorDialog(String message) {
+    public void marcarAsistencia(View view) {
         new AlertDialog.Builder(this)
-                .setTitle(R.string.teacher_dlg_error_title)
-                .setMessage(message)
+                .setTitle("Enhorabuena!")
+                .setMessage("Asistencia marcada")
                 .setPositiveButton(android.R.string.ok, null)
                 .show();
+
+        retroceder(view);
     }
 
 }

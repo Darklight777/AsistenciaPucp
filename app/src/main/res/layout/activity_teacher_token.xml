@@ -68,6 +68,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="30dp"
         android:background="#26A69A"
+        android:textAlignment="center"
         android:onClick="generateToken"
         android:text="@string/teacherToken_btn_generate"
         android:textColor="#FFFFFF"

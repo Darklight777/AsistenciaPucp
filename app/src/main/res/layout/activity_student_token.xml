@@ -78,8 +78,8 @@
             android:id="@+id/studentToken_lbl_token_empty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
+            android:layout_marginLeft="100"
+            android:layout_marginRight="100"
             android:padding="10dp"
             android:text="@string/studentToken_lbl_token_empty" />
 

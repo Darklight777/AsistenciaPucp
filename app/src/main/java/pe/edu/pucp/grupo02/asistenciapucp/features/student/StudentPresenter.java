@@ -95,7 +95,6 @@ public class StudentPresenter implements IStudentPresenter{
 
     @Override
     public void messagesOffline() {
-
     }
 
     @Override

@@ -1,5 +1,6 @@
 package pe.edu.pucp.grupo02.asistenciapucp.features.teacher.token;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import java.util.Random;
 
 import pe.edu.pucp.grupo02.asistenciapucp.R;
+import pe.edu.pucp.grupo02.asistenciapucp.features.principal.PrincipalActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.student.IStudentView;
 import pe.edu.pucp.grupo02.asistenciapucp.features.student.messages.StudentMessagesActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.TeacherActivity;
@@ -27,7 +29,7 @@ public class TeacherTokenActivity extends AppCompatActivity implements ITeacherT
     private TextView mCourseSchedule;
     private TextView mCourseTime;
     private TextView mToken;
-    private Switch swt; // = (Switch) findViewById(R.id.teacherToken_swt_enable);
+    private Switch mSwt; // = (Switch) findViewById(R.id.teacherToken_swt_enable);
     private ITeacherTokenPresenter mPresenter;
 
     @Override
@@ -40,7 +42,7 @@ public class TeacherTokenActivity extends AppCompatActivity implements ITeacherT
         mCourseSchedule = super.findViewById(R.id.teacherToken_txt_schedule);
         mCourseTime = super.findViewById(R.id.teacherToken_txt_time);
         mToken = this.findViewById(R.id.teacherToken_txt_token);
-
+        mSwt = this.findViewById(R.id.teacherToken_swt_enable);
         mPresenter = new TeacherTokenPresenter(this);
 
         showInfo();
@@ -59,6 +61,7 @@ public class TeacherTokenActivity extends AppCompatActivity implements ITeacherT
                     mCourseTime.getText().toString());
             Utilities.showMessage(this,R.string.teacher_msg_loading);
         }
+        mSwt.toggle();
     }
 
     public void showToken(String token)
@@ -66,7 +69,10 @@ public class TeacherTokenActivity extends AppCompatActivity implements ITeacherT
         mToken.setText(token);
     }
 
+
     public  void swtOnClick(View view){
+
+
 
     }
 
@@ -86,6 +92,10 @@ public class TeacherTokenActivity extends AppCompatActivity implements ITeacherT
                 .setMessage(message)
                 .setPositiveButton(android.R.string.ok, null)
                 .show();
+    }
+    public void retroceder(View view){
+        Intent anterior = new Intent(this, TeacherActivity.class);
+        startActivity(anterior);
     }
 
     @Override

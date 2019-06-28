@@ -3,8 +3,8 @@
 
     <!-- Inicio de sesión -->
     <string name="login_txt_title">Inicio de sesión</string>
-    <string name="login_ipt_username">Nombre de usuario</string>
-    <string name="login_ipt_password">Contraseña</string>
+    <string name="login_ipt_username">   Nombre de usuario</string>
+    <string name="login_ipt_password">   Contraseña</string>
     <string name="login_btn_submit">Ingresar</string>
     <string name="login_msg_username_empty">Ingrese su nombre de usuario.</string>
     <string name="login_msg_password_empty">Ingrese su contraseña.</string>
@@ -66,7 +66,8 @@
 
     <!--teacher attendance control -->
     <string name="teacherAttendance_txt_porcentaje">%</string>
-    <string name="teacherAttendance_lbl_firstcourse">curso 1: </string>
-    <string name="teacherAttendance_lbl_secondcourse">curso 2: </string>
-    <string name="teacherAttendance_lbl_thirdcourse">curso 3: </string>
+    <string name="teacherAttendance_lbl_firstcourse">curso1</string>
+    <string name="teacherAttendance_lbl_secondcourse">curso2</string>
+    <string name="teacherAttendance_lbl_thirdcourse">curso3</string>
+
 </resources>

@@ -25,9 +25,18 @@ public class StudentPresenter implements IStudentPresenter{
         this.view = view;
     }
 
-    public boolean verifyMessagesData() {
+    public boolean verifyAttendanceData(){
         return true;
     }
+
+    public boolean verifyTokenData(){
+        return true;
+    }
+
+    public boolean verifyMessagesData(){
+        return true;
+    }
+
 
     public void anunciosRest() {
         LoginInRO loginInRO = new LoginInRO(ApiAdapter.APPLICATION_NAME, "o", "o");

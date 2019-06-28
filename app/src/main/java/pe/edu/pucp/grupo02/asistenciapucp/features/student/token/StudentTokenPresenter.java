@@ -18,10 +18,10 @@ import retrofit2.Response;
 
 public class StudentTokenPresenter implements IStudentTokenPresenter {
 
-    private final static String TAG = "AP_TEACHER_PRESENTER";
-    private ITeacherTokenView view;
+    private final static String TAG = "AP_STUDENT_PRESENTER";
+    private IStudentTokenView view;
 
-    public StudentTokenPresenter(ITeacherTokenView view){this.view = view;}
+    public StudentTokenPresenter(IStudentTokenView view){this.view = view;}
 
     //No hay reestriccion;
     public boolean verifyTokenData(String s1,String s2,String s3){
@@ -74,7 +74,7 @@ public class StudentTokenPresenter implements IStudentTokenPresenter {
             // Guardar los datos del usuario en la base de datos
             //new UserSaveTask(view, username, password, userOutRO).execute();
             // Ir a la pantalla de bienvenida
-            view.showToken(generateTokenOutRO.getToken());
+            view.showTokenStudent(generateTokenOutRO.getToken());
         }
     }
 

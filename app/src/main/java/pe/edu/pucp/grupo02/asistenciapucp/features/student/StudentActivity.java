@@ -14,7 +14,7 @@ import pe.edu.pucp.grupo02.asistenciapucp.features.student.attendance.StudentAtt
 import pe.edu.pucp.grupo02.asistenciapucp.features.student.messages.StudentMessagesActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.student.token.StudentTokenActivity;
 
-public class StudentActivity extends AppCompatActivity implements IStudentView{
+public class StudentActivity extends AppCompatActivity implements IStudentView {
 
     //TAG = AsistenciaPucp_STUDENT ....
     private final static String TAG = "AP_STUDENT_VIEW";
@@ -40,26 +40,30 @@ public class StudentActivity extends AppCompatActivity implements IStudentView{
 
         mPresenter = new StudentPresenter(this);
     }
-    public void retroceder(View view){
+
+    public void retroceder(View view) {
         Intent anterior = new Intent(this, PrincipalActivity.class);
         startActivity(anterior);
     }
-    public void MoverAIngresarToken(String name, String sch, String time){
-        Intent siguiente = new Intent(this, StudentTokenActivity.class);
-        siguiente.putExtra(STUDENT_TOKEN_EXTRA_COURSENAME, name);
-        siguiente.putExtra(STUDENT_TOKEN_EXTRA_COURSESCH, sch);
-        siguiente.putExtra(STUDENT_TOKEN_EXTRA_COURSETIME, time);
-        startActivity(siguiente);
-    }
-    public void MoverAStudentAttendance(View view){
+
+    public void token(View view) {
         // Validar datos del usuario
-        if (mPresenter.verifyMessagesData()) {
+        if (mPresenter.verifyTokenData()) {
             // Mostrar mensajes
             mPresenter.asistenciaRest();
         }
     }
 
-    public void MoverAStudentMessages(View view) {
+
+    public void attendance(View view) {
+        // Validar datos del usuario
+        if (mPresenter.verifyAttendanceData()) {
+            // Mostrar mensajes
+            mPresenter.asistenciaRest();
+        }
+    }
+
+    public void messages(View view) {
         // Validar datos del usuario
         if (mPresenter.verifyMessagesData()) {
             // Mostrar mensajes
@@ -67,28 +71,13 @@ public class StudentActivity extends AppCompatActivity implements IStudentView{
         }
     }
 
-    public void askForMessagesOffline() {
-        new AlertDialog.Builder(this)
-                .setTitle(R.string.login_dlg_offline_title)
-                .setMessage(R.string.login_dlg_offline_msg)
-                .setPositiveButton(android.R.string.yes,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                // Obtener mensajes sin conexión
-                                mPresenter.messagesOffline();
-                            }
-                        })
-                .setNegativeButton(android.R.string.no, null)
-                .show();
-    }
 
-    public void showErrorDialog(String message) {
-        new AlertDialog.Builder(this)
-                .setTitle(R.string.login_dlg_error_title)
-                .setMessage(message)
-                .setPositiveButton(android.R.string.ok, null)
-                .show();
+    public void MoverAIngresarToken(String name, String sch, String time){
+        Intent siguiente = new Intent(this, StudentTokenActivity.class);
+        siguiente.putExtra(STUDENT_TOKEN_EXTRA_COURSENAME, name);
+        siguiente.putExtra(STUDENT_TOKEN_EXTRA_COURSESCH, sch);
+        siguiente.putExtra(STUDENT_TOKEN_EXTRA_COURSETIME, time);
+        startActivity(siguiente);
     }
 
     public void gotoStudentAttendance(String porce1, String porce2, String porce3){
@@ -109,9 +98,32 @@ public class StudentActivity extends AppCompatActivity implements IStudentView{
         startActivity(siguiente);
     }
 
-    public void gotoStudentAttendance(String porce1, String porce2, String porce3) {
 
+    public void askForMessagesOffline() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.login_dlg_offline_title)
+                .setMessage(R.string.login_dlg_offline_msg)
+                .setPositiveButton(android.R.string.yes,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Obtener mensajes sin conexión
+                                mPresenter.messagesOffline();
+                            }
+                        })
+                .setNegativeButton(android.R.string.no, null)
+                .show();
     }
+
+
+    public void showErrorDialog(String message) {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.login_dlg_error_title)
+                .setMessage(message)
+                .setPositiveButton(android.R.string.ok, null)
+                .show();
+    }
+
 
     @Override
     public Context getContext() { return this; }

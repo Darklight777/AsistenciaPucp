@@ -6,6 +6,10 @@ public interface IStudentPresenter extends IPresenter {
 
     boolean verifyMessagesData();
 
+    boolean verifyTokenData();
+
+    boolean verifyAttendanceData();
+
     void anunciosRest();
 
     void asistenciaRest();

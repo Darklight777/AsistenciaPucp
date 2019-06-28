@@ -17,7 +17,7 @@ import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.token.ITeacherTokenPr
 import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.token.TeacherTokenPresenter;
 import pe.edu.pucp.grupo02.asistenciapucp.utils.Utilities;
 
-public class StudentTokenActivity extends AppCompatActivity {
+public class StudentTokenActivity extends AppCompatActivity implements IStudentTokenView{
 
     private final static String TAG = "AP_STUDENT_TOKEN_VIEW";
 
@@ -55,6 +55,10 @@ public class StudentTokenActivity extends AppCompatActivity {
 
     }
 
+    public void showTokenStudent(String token)
+    {
+        mToken.setText(token);
+    }
 
     private void showInfo(){
         Bundle extras = getIntent().getExtras();
@@ -69,6 +73,14 @@ public class StudentTokenActivity extends AppCompatActivity {
     public void retroceder(View view){
         Intent anterior = new Intent(this, StudentActivity.class);
         startActivity(anterior);
+    }
+
+    public void showErrorDialog(String message) {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.teacher_dlg_error_title)
+                .setMessage(message)
+                .setPositiveButton(android.R.string.ok, null)
+                .show();
     }
 
     @Override

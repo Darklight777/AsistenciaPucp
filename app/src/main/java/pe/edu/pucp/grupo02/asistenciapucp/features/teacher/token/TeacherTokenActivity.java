@@ -1,5 +1,6 @@
 package pe.edu.pucp.grupo02.asistenciapucp.features.teacher.token;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import java.util.Random;
 
 import pe.edu.pucp.grupo02.asistenciapucp.R;
+import pe.edu.pucp.grupo02.asistenciapucp.features.principal.PrincipalActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.student.IStudentView;
 import pe.edu.pucp.grupo02.asistenciapucp.features.student.messages.StudentMessagesActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.TeacherActivity;
@@ -91,6 +93,10 @@ public class TeacherTokenActivity extends AppCompatActivity implements ITeacherT
                 .setMessage(message)
                 .setPositiveButton(android.R.string.ok, null)
                 .show();
+    }
+    public void retroceder(View view){
+        Intent anterior = new Intent(this, TeacherActivity.class);
+        startActivity(anterior);
     }
 
     @Override

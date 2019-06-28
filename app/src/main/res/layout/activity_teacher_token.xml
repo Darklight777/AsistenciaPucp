@@ -1,84 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#26A69A"
     tools:context=".features.teacher.token.TeacherTokenActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/teacherToken_txt_courseName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="16dp"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/retroceder_v2" />
 
-            android:textSize="36sp" />
+    <TextView
+        android:id="@+id/teacherToken_txt_courseName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
 
-        <TextView
-            android:id="@+id/teacherToken_txt_schedule"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="16dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            android:textSize="24sp" />
+    <TextView
+        android:id="@+id/teacherToken_txt_schedule"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
 
-        <TextView
-            android:id="@+id/teacherToken_txt_time"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="16dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacherToken_txt_courseName" />
 
-            android:textSize="24sp" />
+    <TextView
+        android:id="@+id/teacherToken_txt_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
 
-        <Button
-            android:id="@+id/teacherToken_btn_token"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="16dp"
-            android:onClick="generateToken"
-            android:text="@string/teacherToken_btn_generate"
-            android:textSize="18sp" />
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacherToken_txt_schedule" />
 
-        <TextView
-            android:id="@+id/teacherToken_txt_token"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="60dp"
-            android:layout_marginBottom="16dp"
-            android:textAlignment="center"
-            android:textSize="30sp" />
+    <Button
+        android:id="@+id/teacherToken_btn_token"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:onClick="generateToken"
+        android:text="@string/teacherToken_btn_generate"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacherToken_txt_time" />
 
-        <Switch
-            android:id="@+id/teacherToken_swt_enable"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            android:checked="true"
+    <TextView
+        android:id="@+id/teacherToken_txt_token"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacherToken_btn_token" />
 
-            android:onClick="swtOnClick"
-            android:textOff="@string/teacherToken_swt_disable"
-            android:textOn="@string/teacherToken_swt_enable" />
+    <Switch
+        android:id="@+id/teacherToken_swt_enable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
 
-    </LinearLayout>
-</ScrollView>
+        android:checked="true"
+        android:onClick="swtOnClick"
+        android:textOff="@string/teacherToken_swt_disable"
+        android:textOn="@string/teacherToken_swt_enable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacherToken_txt_token" />
+
+
+</android.support.constraint.ConstraintLayout>

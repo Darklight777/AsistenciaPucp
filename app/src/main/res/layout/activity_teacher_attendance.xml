@@ -12,12 +12,13 @@
         android:id="@+id/teacherAttendance_btn_goBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="18dp"
         android:background="#26A69A"
         android:onClick="retroceder"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/retroceder"
-        tools:layout_editor_absoluteX="18dp" />
+        app:srcCompat="@drawable/retroceder" />
 
     <ImageButton
         android:id="@+id/teacherAttendance_btn_sync"
@@ -177,7 +178,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="@string/teacherAttendance_lbl_secondcourse"
+            android:text="curso 3:"
             android:textColor="#000000"
             android:textColorHint="#000000"
             android:textSize="24sp" />

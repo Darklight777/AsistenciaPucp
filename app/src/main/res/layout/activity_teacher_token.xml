@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
 
         android:layout_marginTop="18dp"
-        android:checked="true"
+        android:checked="false"
         android:onClick="swtOnClick"
         android:textOff="@string/teacherToken_swt_disable"
         android:textOn="@string/teacherToken_swt_enable"

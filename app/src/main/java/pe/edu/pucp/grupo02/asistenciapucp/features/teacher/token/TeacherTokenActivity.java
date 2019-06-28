@@ -54,7 +54,7 @@ public class TeacherTokenActivity extends AppCompatActivity implements ITeacherT
                     mCourseTime.getText().toString());
             Utilities.showMessage(this,R.string.teacher_msg_loading);
         }
-        mSwt.toggle();
+
     }
 
     public void showToken(String token)
@@ -62,8 +62,7 @@ public class TeacherTokenActivity extends AppCompatActivity implements ITeacherT
         mToken.setText(token);
     }
 
-
-    public  void swtOnClick(View view){}
+    public  void swtOnClick(View view){ mSwt.toggle(); }
 
     private void showInfo(){
         Bundle extras = getIntent().getExtras();

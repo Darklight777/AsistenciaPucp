@@ -73,14 +73,15 @@
             android:textSize="30sp" />
 
         <Switch
-            android:id="@+id/teacherToken_swt_enable"
-            android:layout_width="match_parent"
+            android:id="@+id/teacherToken_swt_token"
+            android:layout_width="146dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
             android:layout_marginRight="100dp"
-            android:checked="true"
+            android:checked="false"
 
             android:onClick="swtOnClick"
+            android:padding="10dp"
             android:textOff="@string/teacherToken_swt_disable"
             android:textOn="@string/teacherToken_swt_enable" />
 

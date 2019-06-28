@@ -42,7 +42,7 @@ public class TeacherTokenActivity extends AppCompatActivity implements ITeacherT
         mCourseSchedule = super.findViewById(R.id.teacherToken_txt_schedule);
         mCourseTime = super.findViewById(R.id.teacherToken_txt_time);
         mToken = this.findViewById(R.id.teacherToken_txt_token);
-        mSwt = this.findViewById(R.id.teacherToken_swt_token);
+        mSwt = this.findViewById(R.id.teacherToken_swt_enable);
         mPresenter = new TeacherTokenPresenter(this);
 
         showInfo();
@@ -61,6 +61,7 @@ public class TeacherTokenActivity extends AppCompatActivity implements ITeacherT
                     mCourseTime.getText().toString());
             Utilities.showMessage(this,R.string.teacher_msg_loading);
         }
+        mSwt.toggle();
     }
 
     public void showToken(String token)
@@ -68,14 +69,12 @@ public class TeacherTokenActivity extends AppCompatActivity implements ITeacherT
         mToken.setText(token);
     }
 
-    /*
+
     public  void swtOnClick(View view){
-        if(mSwt.isChecked()){
-            generateToken();
-        }
 
 
-    }*/
+
+    }
 
 
     private void showInfo(){

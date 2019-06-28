@@ -13,7 +13,7 @@ public interface ITeacherPresenter extends IPresenter {
     boolean verifyTokenData(String s);
 
 
-    void attendanceRest();
+    void attendanceRest(String username);
 
     void messagesRest();
 

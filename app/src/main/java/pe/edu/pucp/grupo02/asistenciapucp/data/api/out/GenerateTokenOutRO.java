@@ -17,7 +17,8 @@ public class GenerateTokenOutRO extends BaseOutRO {
     }
 
     @JsonCreator
-    public GenerateTokenOutRO(@JsonProperty("errorCode") int errorCode, @JsonProperty("message") String message,
+    public GenerateTokenOutRO(@JsonProperty("errorCode") int errorCode,
+                              @JsonProperty("message") String message,
                               @JsonProperty("token") String token){
         super(errorCode,message);
         this.token = token;

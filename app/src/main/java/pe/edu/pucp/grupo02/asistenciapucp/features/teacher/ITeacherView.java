@@ -6,7 +6,7 @@ public interface ITeacherView extends IView {
 
     void MoverAGenerarToken(String name, String sch, String time); //listo datos de entrada
 
-    void MoverATeacherAttendance();//String course1, String course2, String course3); //usar lista
+    void MoverATeacherAttendance(String porc1, String porc2, String porc3);//String course1, String course2, String course3); //usar lista
 
     void MoverATeacherAMessages();
 

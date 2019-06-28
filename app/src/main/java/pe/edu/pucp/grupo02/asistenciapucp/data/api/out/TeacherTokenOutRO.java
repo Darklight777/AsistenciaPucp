@@ -14,9 +14,11 @@ public class TeacherTokenOutRO extends BaseOutRO {
     private String courseTime;
 
     @JsonCreator
-    public TeacherTokenOutRO(@JsonProperty("errorCode") int errorCode, @JsonProperty("message") String message,
-                     @JsonProperty("courseName") String courseName, @JsonProperty("courseSchedule") String courseSchedule,
-                     @JsonProperty("courseTime") String courseTime) {
+    public TeacherTokenOutRO(@JsonProperty("errorCode") int errorCode,
+                             @JsonProperty("message") String message,
+                             @JsonProperty("courseName") String courseName,
+                             @JsonProperty("courseSchedule") String courseSchedule,
+                        @JsonProperty("courseTime") String courseTime) {
         super(errorCode, message);
         this.courseName = courseName;
         this.courseSchedule = courseSchedule;

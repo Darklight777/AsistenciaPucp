@@ -2,9 +2,11 @@ package pe.edu.pucp.grupo02.asistenciapucp.data.api;
 
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.in.GenerateTokenInRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.in.LoginInRO;
+import pe.edu.pucp.grupo02.asistenciapucp.data.api.in.TeacherAttendanceInRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.in.TeacherTokenInRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.GenerateTokenOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.StudentMessagesOutRO;
+import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.TeacherAttendanceOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.TeacherTokenOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.UserOutRO;
 import retrofit2.Call;
@@ -24,5 +26,8 @@ public interface ApiService {
 
     @POST("user/generatetoken")
     Call<GenerateTokenOutRO> gToken(@Body GenerateTokenInRO user);
+
+    @POST("user/teacherattendance")
+    Call<TeacherAttendanceOutRO> attendance(@Body TeacherAttendanceInRO user);
 
 }

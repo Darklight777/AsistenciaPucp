@@ -11,10 +11,10 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="65dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="18dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="30dp"
         android:layout_weight="1"
         android:onClick="retroceder"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,6 +73,15 @@
             android:padding="16dp"
             android:text="@string/studentToken_txt_token"
             android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/studentToken_lbl_token_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100"
+            android:layout_marginRight="100"
+            android:padding="10dp"
+            android:text="@string/studentToken_lbl_token_empty" />
 
         <Button
             android:id="@+id/studentToken_btn_send"

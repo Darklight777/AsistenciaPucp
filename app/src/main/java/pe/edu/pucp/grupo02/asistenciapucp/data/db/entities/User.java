@@ -50,4 +50,5 @@ public class User {
     public String getHash() {
         return hash;
     }
+
 }

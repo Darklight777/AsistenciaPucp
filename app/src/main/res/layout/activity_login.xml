@@ -10,27 +10,11 @@
     tools:context=".features.login.LoginActivity">
 
 
-    <TextView
-        android:id="@+id/login_txt_title"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="40dp"
-        android:text="@string/login_txt_title"
-        android:textAllCaps="false"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
-
     <EditText
         android:id="@+id/login_ipt_username"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="36dp"
         android:layout_marginEnd="36dp"
         android:background="#eeeeee"
         android:ems="10"
@@ -40,7 +24,7 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_txt_title" />
+        tools:layout_editor_absoluteY="325dp" />
 
     <EditText
         android:id="@+id/login_ipt_password"

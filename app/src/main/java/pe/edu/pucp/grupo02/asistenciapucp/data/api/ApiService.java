@@ -7,6 +7,7 @@ import pe.edu.pucp.grupo02.asistenciapucp.data.api.in.TeacherTokenInRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.GenerateTokenOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.StudentAttendanceOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.StudentMessagesOutRO;
+import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.StudentTokenOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.TeacherAttendanceOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.TeacherTokenOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.UserOutRO;
@@ -18,6 +19,9 @@ public interface ApiService {
 
     @POST("user/login")
     Call<UserOutRO> login(@Body LoginInRO user);
+
+    @POST("user/studenttoken")
+    Call<StudentTokenOutRO> token(@Body LoginInRO user);
 
     @POST("user/studentmsjes")
     Call<StudentMessagesOutRO> announcements(@Body LoginInRO user);

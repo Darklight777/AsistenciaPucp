@@ -10,22 +10,14 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import pe.edu.pucp.grupo02.asistenciapucp.R;
-import pe.edu.pucp.grupo02.asistenciapucp.features.principal.PrincipalActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.student.StudentActivity;
-import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.TeacherActivity;
-import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.token.ITeacherTokenPresenter;
-import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.token.TeacherTokenPresenter;
 import pe.edu.pucp.grupo02.asistenciapucp.utils.Utilities;
 
-public class StudentTokenActivity extends AppCompatActivity implements IStudentTokenView{
-
-    private final static String TAG = "AP_STUDENT_TOKEN_VIEW";
+public class StudentTokenActivity extends AppCompatActivity {
 
     private TextView mCourseName;
     private TextView mCourseSchedule;
     private TextView mCourseTime;
-    private TextView mToken;
-    private IStudentTokenPresenter mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +25,13 @@ public class StudentTokenActivity extends AppCompatActivity implements IStudentT
         setContentView(R.layout.activity_student_token);
 
         mCourseName = super.findViewById(R.id.studentToken_txt_courseName);
-        mCourseSchedule = super.findViewById(R.id.studentToken_txt_schedule);
-        mCourseTime = super.findViewById(R.id.studentToken_txt_time);
-        mToken = this.findViewById(R.id.studentToken_txt_token);
-        mPresenter = new StudentTokenPresenter(this);
+        mCourseSchedule = super.findViewById(R.id.lbl_student_token_horario);
+        mCourseTime = super.findViewById(R.id.lbl_student_token_hora);
+
         showInfo();
     }
 
+    /*
     public void btnOnClick(View view){
 
         //int random = new  Random().nextInt(10000) + 10000;
@@ -58,14 +50,19 @@ public class StudentTokenActivity extends AppCompatActivity implements IStudentT
     public void showTokenStudent(String token)
     {
         mToken.setText(token);
-    }
+    }*/
 
     private void showInfo(){
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            mCourseName.setText(extras.getString(StudentActivity.STUDENT_TOKEN_EXTRA_COURSENAME));
-            mCourseSchedule.setText(extras.getString(StudentActivity.STUDENT_TOKEN_EXTRA_COURSESCH));
-            mCourseTime.setText(extras.getString(StudentActivity.STUDENT_TOKEN_EXTRA_COURSETIME));
+            // Obtener los mensajes enviados por el Intent
+            String curso = extras.getString(StudentActivity.STUDENT_TOKEN_EXTRA_COURSENAME);
+            String horario = extras.getString(StudentActivity.STUDENT_TOKEN_EXTRA_COURSESCH);
+            String hora = extras.getString(StudentActivity.STUDENT_TOKEN_EXTRA_COURSETIME);
+            // Colocar los valores en el TextView
+            mCourseName.setText(curso);
+            mCourseSchedule.setText(horario);
+            mCourseTime.setText(hora);
         }
     }
 
@@ -81,17 +78,6 @@ public class StudentTokenActivity extends AppCompatActivity implements IStudentT
                 .setMessage(message)
                 .setPositiveButton(android.R.string.ok, null)
                 .show();
-    }
-
-    @Override
-    public Context getContext() {
-        return this;
-    }
-
-    @Override
-    public void onDestroy() {
-        mPresenter.onDestroy();
-        super.onDestroy();
     }
 
 }

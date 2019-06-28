@@ -20,8 +20,8 @@ public class StudentActivity extends AppCompatActivity implements IStudentView {
     private final static String TAG = "AP_STUDENT_VIEW";
 
     public final static String STUDENT_TOKEN_EXTRA_COURSENAME = "STUDENT_EXTRA_COURSENAME";
-    public final static String STUDENT_TOKEN_EXTRA_COURSETIME = "STUDENT_EXTRA_COURSETIME";
     public final static String STUDENT_TOKEN_EXTRA_COURSESCH = "STUDENT_EXTRA_COURSESCH";
+    public final static String STUDENT_TOKEN_EXTRA_COURSETIME = "STUDENT_EXTRA_COURSETIME";
 
     public final static String STUDENT_MSJE1 = "STUDENT_MSJE1";
     public final static String STUDENT_MSJE2 = "STUDENT_MSJE2";
@@ -50,10 +50,9 @@ public class StudentActivity extends AppCompatActivity implements IStudentView {
         // Validar datos del usuario
         if (mPresenter.verifyTokenData()) {
             // Mostrar mensajes
-            mPresenter.asistenciaRest();
+            mPresenter.tokenRest();
         }
     }
-
 
     public void attendance(View view) {
         // Validar datos del usuario
@@ -71,7 +70,7 @@ public class StudentActivity extends AppCompatActivity implements IStudentView {
         }
     }
 
-    public void MoverAIngresarToken(String name, String sch, String time){
+    public void gotoIngresarToken(String name, String sch, String time){
         Intent siguiente = new Intent(this, StudentTokenActivity.class);
         siguiente.putExtra(STUDENT_TOKEN_EXTRA_COURSENAME, name);
         siguiente.putExtra(STUDENT_TOKEN_EXTRA_COURSESCH, sch);

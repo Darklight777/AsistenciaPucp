@@ -26,13 +26,13 @@ public class TeacherMessagesActivity extends AppCompatActivity {
 
 
 
-        showInfo();
+        //showInfo();
     }
     public void retroceder(View view){
         Intent anterior = new Intent(this, TeacherActivity.class);
         startActivity(anterior);
     }
-
+/*
     private void showInfo()
     {
         String test = "12";
@@ -44,16 +44,16 @@ public class TeacherMessagesActivity extends AppCompatActivity {
 
         if (false){//extras != null) {
 
-            String c1 = extras.getString(TeacherActivity.TEACHER_ATTENDANCE_EXTRA_P1);
-            String c2 = extras.getString(TeacherActivity.TEACHER_ATTENDANCE_EXTRA_P2);
-            String c3 = extras.getString(TeacherActivity.TEACHER_ATTENDANCE_EXTRA_P3);
+            //String c1 = extras.getString(TeacherActivity.TEACHER_ATTENDANCE_EXTRA_P1);
+            //String c2 = extras.getString(TeacherActivity.TEACHER_ATTENDANCE_EXTRA_P2);
+            //String c3 = extras.getString(TeacherActivity.TEACHER_ATTENDANCE_EXTRA_P3);
 
-            mCourse1.setText(c1);
+            mCourse1.setText("");
             mCourse2.setText(c2);
             mCourse3.setText(c3);
 
         }
-    }
+    }*/
 
 
 }

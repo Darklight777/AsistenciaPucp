@@ -19,7 +19,6 @@
             android:id="@+id/home_lbl_fullname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/home_lbl_fullname"
             android:textSize="12sp" />
 
         <TextView
@@ -33,7 +32,6 @@
             android:id="@+id/home_lbl_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/home_lbl_email"
             android:textSize="12sp" />
 
         <TextView
@@ -48,7 +46,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:onClick="logout"
-            android:text="@string/home_btn_logout" />
+            android:onClick="logout" />
     </LinearLayout>
 </ScrollView>

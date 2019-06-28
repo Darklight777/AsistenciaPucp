@@ -8,25 +8,23 @@
     tools:context=".features.teacher.attendance.TeacherAttendanceActivity">
 
 
-
     <ImageButton
         android:id="@+id/teacherAttendance_btn_goBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
         android:layout_marginTop="18dp"
         android:background="#26A69A"
         android:onClick="retroceder"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/retroceder" />
+        app:srcCompat="@drawable/retroceder"
+        tools:layout_editor_absoluteX="18dp" />
 
     <ImageButton
         android:id="@+id/teacherAttendance_btn_sync"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="16dp"
         android:background="#26A69A"
         app:layout_constraintStart_toEndOf="@+id/teacherAttendance_btn_goBack"
         app:layout_constraintTop_toTopOf="parent"
@@ -46,7 +44,7 @@
         android:paddingBottom="10dp"
         android:textColor="@android:color/black"
         android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/teacherAttendance_btn_sync"
+        app:layout_constraintStart_toEndOf="@+id/teacherAttendance_btn_goBack"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout

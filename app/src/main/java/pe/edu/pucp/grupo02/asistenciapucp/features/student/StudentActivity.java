@@ -71,7 +71,6 @@ public class StudentActivity extends AppCompatActivity implements IStudentView {
         }
     }
 
-
     public void MoverAIngresarToken(String name, String sch, String time){
         Intent siguiente = new Intent(this, StudentTokenActivity.class);
         siguiente.putExtra(STUDENT_TOKEN_EXTRA_COURSENAME, name);

@@ -43,7 +43,7 @@ public class StudentMessagesActivity extends AppCompatActivity {
     }
 
     public void retroceder(View view){
-        Intent anterior = new Intent(this, PrincipalActivity.class);
+        Intent anterior = new Intent(this, StudentActivity.class);
         startActivity(anterior);
     }
 }

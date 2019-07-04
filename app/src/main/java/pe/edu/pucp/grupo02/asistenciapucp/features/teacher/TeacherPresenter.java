@@ -9,9 +9,11 @@ import java.net.UnknownHostException;
 
 import pe.edu.pucp.grupo02.asistenciapucp.R;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.ApiAdapter;
+import pe.edu.pucp.grupo02.asistenciapucp.data.api.in.LoginInRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.in.TeacherAttendanceInRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.in.TeacherTokenInRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.TeacherAttendanceOutRO;
+import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.TeacherMessagesOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.TeacherTokenOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.UserOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.features.login.UserSaveTask;
@@ -111,9 +113,42 @@ public class TeacherPresenter implements ITeacherPresenter {
 
 
     public void messagesRest() {
-        view.MoverATeacherAMessages();
+        LoginInRO loginInRO = new LoginInRO(ApiAdapter.APPLICATION_NAME, "o", "o");
+        Call<TeacherMessagesOutRO> call = ApiAdapter.getInstance().cursosHorarios(loginInRO);
+        call.enqueue(new Callback<TeacherMessagesOutRO>() {
+            @Override
+            public void onResponse(@NonNull Call<TeacherMessagesOutRO> call, @NonNull Response<TeacherMessagesOutRO> response) {
+                processMessagesResponse(response);
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<TeacherMessagesOutRO> call, @NonNull Throwable t) {
+                if (t instanceof UnknownHostException) {
+                    // No se encontró la URL, preguntar si se desea iniciar sesión
+                    // sin conexión
+                } else {
+                    // Mostrar mensaje de error en el logcat y en un cuadro de diálogo
+                    t.printStackTrace();
+                    view.showErrorDialog(t.getMessage());
+                }
+            }
+        });
     }
 
+    private void processMessagesResponse(Response<TeacherMessagesOutRO> response) {
+        // Verificar respuesta del servidor REST
+        Pair<TeacherMessagesOutRO, String> result = validateMessagesResponse(response);
+        if (result.first == null) {
+            // Mostrar mensaje de error
+            view.showErrorDialog(result.second);
+        } else {
+            // Obtener el objeto JSON
+            TeacherMessagesOutRO teacherMessagesOutRO = result.first;
+            // Ir a la pantalla de mensajes
+            view.gotoTeacherMessages(teacherMessagesOutRO.getCurso1(), teacherMessagesOutRO.getCurso2(), teacherMessagesOutRO.getCurso3(),
+                    teacherMessagesOutRO.getHorarios1(), teacherMessagesOutRO.getHorarios2(), teacherMessagesOutRO.getHorarios3());
+        }
+    }
 
     public void attendanceRest(final String username){
 
@@ -177,6 +212,35 @@ public class TeacherPresenter implements ITeacherPresenter {
         String message = teacherAttendanceOutRO.getMessage();
         if (errorCode == 0) {
             return new Pair<>(teacherAttendanceOutRO, message); // Respuesta sin errores
+        }
+        // Verificar que el mensaje de error no está vacío
+        if (message == null || message.isEmpty()) {
+            message = Utilities.formatString(context, R.string.api_dlg_error_msg_rest,
+                    errorCode);
+        }
+        return new Pair<>(null, message);
+    }
+
+    private Pair<TeacherMessagesOutRO, String> validateMessagesResponse(Response<TeacherMessagesOutRO> response) {
+        Context context = view.getContext();
+        // Verificar que la respuesta es satisfactoria
+        if (!response.isSuccessful()) {
+            String message = Utilities.formatString(context,
+                    R.string.api_dlg_error_msg_http, response.code());
+            return new Pair<>(null, message);
+        }
+        // Verificar el contenido de la respuesta en JSON
+        TeacherMessagesOutRO teacherMessagesOutRO = response.body();
+        if (teacherMessagesOutRO == null) {
+            String message = Utilities.formatString(context,
+                    R.string.api_dlg_error_msg_empty);
+            return new Pair<>(null, message);
+        }
+        // Verificar que la respuesta no indique un error
+        int errorCode = teacherMessagesOutRO.getErrorCode();
+        String message = teacherMessagesOutRO.getMessage();
+        if (errorCode == 0) {
+            return new Pair<>(teacherMessagesOutRO, message); // Respuesta sin errores
         }
         // Verificar que el mensaje de error no está vacío
         if (message == null || message.isEmpty()) {

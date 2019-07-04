@@ -9,6 +9,7 @@ import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.StudentAttendanceOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.StudentMessagesOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.StudentTokenOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.TeacherAttendanceOutRO;
+import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.TeacherMessagesOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.TeacherTokenOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.UserOutRO;
 import retrofit2.Call;
@@ -34,6 +35,9 @@ public interface ApiService {
 
     @POST("user/generatetoken")
     Call<GenerateTokenOutRO> gToken(@Body GenerateTokenInRO user);
+
+    @POST("cursos/horarios")
+    Call<TeacherMessagesOutRO> cursosHorarios(@Body LoginInRO user);
 
     @POST("user/teacherattendance")
     Call<TeacherAttendanceOutRO> attendance(@Body TeacherAttendanceInRO user);

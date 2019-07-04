@@ -14,6 +14,7 @@ import java.util.List;
 
 import pe.edu.pucp.grupo02.asistenciapucp.R;
 import pe.edu.pucp.grupo02.asistenciapucp.features.principal.PrincipalActivity;
+import pe.edu.pucp.grupo02.asistenciapucp.features.student.StudentActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.TeacherActivity;
 
 public class TeacherMessagesActivity extends AppCompatActivity {
@@ -31,28 +32,53 @@ public class TeacherMessagesActivity extends AppCompatActivity {
 
         spinner2 = (Spinner) findViewById(R.id.teacherMessages_spn_course);
         spinner1 = (Spinner) findViewById(R.id.teacherMessages_spn_schedule);
+
         List<String> list1 = new ArrayList<String>();
-        list1.add("Teoria de comunicaciones 2");
-        list1.add("Redes de computadoras");
-        list1.add("filosofia");
+
+        showCursos(list1);
+
         ArrayAdapter<String> dataAdapter1 = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, list1);
         dataAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-
         List<String> list2 = new ArrayList<String>();
-        list2.add("721");
-        list2.add("732");
-        list2.add("1024");
+
+        showHorarios(list2);
+
         ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, list2);
         dataAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner2.setAdapter(dataAdapter1);
         spinner1.setAdapter(dataAdapter2);
-
-
     }
+
+    private void showCursos(List<String> list) {
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            // Obtener los mensajes enviados por el Intent
+            String curso1 = extras.getString(TeacherActivity.TEACHER_COURSE1);
+            String curso2 = extras.getString(TeacherActivity.TEACHER_COURSE2);
+            String curso3 = extras.getString(TeacherActivity.TEACHER_COURSE3);
+            // Colocar los valores en el Spinner
+            list.add(curso1);
+            list.add(curso2);
+            list.add(curso3);
+        }
+    }
+
+    private void showHorarios(List<String> list) {
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            // Obtener los mensajes enviados por el Intent
+            String horario1[] = extras.getStringArray(TeacherActivity.TEACHER_SCHEDULE1);
+            // Colocar los valores en el Spinner
+            list.add(horario1[0]);
+            list.add(horario1[1]);
+            list.add(horario1[2]);
+        }
+    }
+
     public void retroceder(View view){
         Intent anterior = new Intent(this, TeacherActivity.class);
         startActivity(anterior);

@@ -10,6 +10,8 @@ public interface ITeacherView extends IView {
 
     void MoverATeacherAMessages();
 
+    void gotoTeacherMessages(String cur1, String cur2, String cur3, String[] hor1, String[] hor2, String[] hor3);
+
     void showErrorDialog(String message);
 
 }

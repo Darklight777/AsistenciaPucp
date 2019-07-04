@@ -34,6 +34,13 @@ public class TeacherActivity extends AppCompatActivity implements ITeacherView{
     public final static String TEACHER_ATTENDANCE_EXTRA_P2 = "TEACHER_ATTENDANCE_EXTRA_P2";
     public final static String TEACHER_ATTENDANCE_EXTRA_P3 = "TEACHER_ATTENDANCE_EXTRA_P3";
 
+    public final static String TEACHER_COURSE1 = "TEACHER_COURSE1";
+    public final static String TEACHER_COURSE2 = "TEACHER_COURSE2";
+    public final static String TEACHER_COURSE3 = "TEACHER_COURSE3";
+
+    public final static String TEACHER_SCHEDULE1 = "TEACHER_SCHEDULE1";
+    public final static String TEACHER_SCHEDULE2 = "TEACHER_SCHEDULE2";
+    public final static String TEACHER_SCHEDULE3 = "TEACHER_SCHEDULE3";
 
     private ITeacherPresenter mPresenter;
 
@@ -93,6 +100,17 @@ public class TeacherActivity extends AppCompatActivity implements ITeacherView{
             mPresenter.messagesRest();
             Utilities.showMessage(this, R.string.teacher_msg_loading);
         }
+    }
+
+    public void gotoTeacherMessages(String cur1, String cur2, String cur3, String[] hor1, String[] hor2, String[] hor3) {
+        Intent siguiente = new Intent(this, TeacherMessagesActivity.class);
+        siguiente.putExtra(TEACHER_COURSE1, cur1);
+        siguiente.putExtra(TEACHER_COURSE2, cur2);
+        siguiente.putExtra(TEACHER_COURSE3, cur3);
+        siguiente.putExtra(TEACHER_SCHEDULE1, hor1);
+        siguiente.putExtra(TEACHER_SCHEDULE2, hor2);
+        siguiente.putExtra(TEACHER_SCHEDULE3, hor3);
+        startActivity(siguiente);
     }
 
     public void attendance(View v)

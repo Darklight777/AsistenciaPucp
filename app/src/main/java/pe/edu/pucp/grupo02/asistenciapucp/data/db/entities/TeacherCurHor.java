@@ -4,6 +4,8 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+import java.util.StringTokenizer;
+
 @Entity(tableName = "TEACHERCURHOR")
 public class TeacherCurHor {
 
@@ -68,7 +70,20 @@ public class TeacherCurHor {
     }
 
     public String getHorario3() {
+
         return horario3;
+    }
+
+    public String[] getHorarioArreglo1() {
+        return horario1.split(",");
+    }
+
+    public String[] getHorarioArreglo2() {
+        return horario2.split(",");
+    }
+
+    public String[] getHorarioArreglo3() {
+        return horario3.split(",");
     }
 
     public void setMsjeId(int msjeId) {

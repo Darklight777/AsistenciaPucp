@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import java.security.Principal;
-
 import pe.edu.pucp.grupo02.asistenciapucp.R;
 import pe.edu.pucp.grupo02.asistenciapucp.features.principal.PrincipalActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.utils.Utilities;

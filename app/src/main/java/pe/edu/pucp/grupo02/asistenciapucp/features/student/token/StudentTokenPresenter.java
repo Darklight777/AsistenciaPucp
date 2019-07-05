@@ -10,7 +10,6 @@ import pe.edu.pucp.grupo02.asistenciapucp.R;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.ApiAdapter;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.in.GenerateTokenInRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.GenerateTokenOutRO;
-import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.token.ITeacherTokenView;
 import pe.edu.pucp.grupo02.asistenciapucp.utils.Utilities;
 import retrofit2.Call;
 import retrofit2.Callback;

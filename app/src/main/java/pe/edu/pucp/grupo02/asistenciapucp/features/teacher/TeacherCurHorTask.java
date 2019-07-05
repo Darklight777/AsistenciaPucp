@@ -8,7 +8,6 @@ import java.lang.ref.WeakReference;
 import pe.edu.pucp.grupo02.asistenciapucp.R;
 import pe.edu.pucp.grupo02.asistenciapucp.data.db.AppDatabase;
 import pe.edu.pucp.grupo02.asistenciapucp.data.db.entities.TeacherCurHor;
-import pe.edu.pucp.grupo02.asistenciapucp.features.login.ILoginView;
 import pe.edu.pucp.grupo02.asistenciapucp.utils.Utilities;
 
 public class TeacherCurHorTask extends AsyncTask<Void, Void, TeacherCurHor> {

@@ -1,7 +1,5 @@
 package pe.edu.pucp.grupo02.asistenciapucp.features.teacher;
 
-import android.view.View;
-
 import pe.edu.pucp.grupo02.asistenciapucp.features.base.IPresenter;
 
 public interface ITeacherPresenter extends IPresenter {

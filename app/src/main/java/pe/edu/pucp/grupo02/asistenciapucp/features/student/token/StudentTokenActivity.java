@@ -1,17 +1,14 @@
 package pe.edu.pucp.grupo02.asistenciapucp.features.student.token;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import pe.edu.pucp.grupo02.asistenciapucp.R;
 import pe.edu.pucp.grupo02.asistenciapucp.features.student.StudentActivity;
-import pe.edu.pucp.grupo02.asistenciapucp.utils.Utilities;
 
 public class StudentTokenActivity extends AppCompatActivity {
 

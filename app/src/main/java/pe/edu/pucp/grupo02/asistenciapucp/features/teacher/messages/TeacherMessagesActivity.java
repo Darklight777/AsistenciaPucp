@@ -9,15 +9,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import pe.edu.pucp.grupo02.asistenciapucp.R;
-import pe.edu.pucp.grupo02.asistenciapucp.features.principal.PrincipalActivity;
-import pe.edu.pucp.grupo02.asistenciapucp.features.student.StudentActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.TeacherActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.utils.Utilities;
 
@@ -25,12 +21,9 @@ public class TeacherMessagesActivity extends AppCompatActivity {
 
     private final static String TAG = "AP_TEACHER_ATTENDANCE_VIEW";
 
-    private int msjeId;
     private Context mContext = this;
     private Spinner spinnerCur, spinnerHor;
     private Button btnSubmit;
-
-    //public final static String TEACHER_MSJEID = "TEACHER_MSJEID";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +49,6 @@ public class TeacherMessagesActivity extends AppCompatActivity {
                 // Get the spinner selected item text
                 String selectedItemText = (String) adapterView.getItemAtPosition(i);
 
-                //Utilities.showMessage(mContext,"TeacherCurHor: " + i);
                 List<String> list2 = new ArrayList<String>();
                 showHorarios(i, list2);
 
@@ -75,7 +67,6 @@ public class TeacherMessagesActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             // Obtener los mensajes enviados por el Intent
-            int msjeId = extras.getInt(TeacherActivity.TEACHER_MSJEID);
             String curso1 = extras.getString(TeacherActivity.TEACHER_COURSE1);
             String curso2 = extras.getString(TeacherActivity.TEACHER_COURSE2);
             String curso3 = extras.getString(TeacherActivity.TEACHER_COURSE3);
@@ -115,7 +106,6 @@ public class TeacherMessagesActivity extends AppCompatActivity {
 
     public void retroceder(View view){
         Intent anterior = new Intent(this, TeacherActivity.class);
-        //anterior.putExtra(TEACHER_MSJEID, msjeId);
         startActivity(anterior);
     }
 

@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import pe.edu.pucp.grupo02.asistenciapucp.R;
-import pe.edu.pucp.grupo02.asistenciapucp.features.principal.PrincipalActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.student.StudentActivity;
 
 public class StudentMessagesActivity extends AppCompatActivity {

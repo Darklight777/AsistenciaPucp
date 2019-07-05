@@ -7,16 +7,13 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import okhttp3.internal.Util;
 import pe.edu.pucp.grupo02.asistenciapucp.R;
-import pe.edu.pucp.grupo02.asistenciapucp.features.login.LoginActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.principal.PrincipalActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.attendance.TeacherAttendanceActivity;
 import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.messages.TeacherMessagesActivity;
@@ -146,6 +143,8 @@ public class TeacherActivity extends AppCompatActivity implements ITeacherView{
         siguiente.putExtra(TEACHER_ATTENDANCE_EXTRA_P3, n3);
         startActivity(siguiente);
     }
+
+    @Deprecated
     public void MoverATeacherAMessages(){
         Intent siguiente = new Intent(this, TeacherMessagesActivity.class);
         startActivity(siguiente);

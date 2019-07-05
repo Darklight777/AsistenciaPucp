@@ -9,13 +9,13 @@ import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.TeacherMessagesOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.db.AppDatabase;
 import pe.edu.pucp.grupo02.asistenciapucp.data.db.entities.TeacherCurHor;
 
-public class TeacherMessageSaveTask extends AsyncTask<Void, Void, Boolean> {
+public class TeacherCurHorSaveTask extends AsyncTask<Void, Void, Boolean> {
 
     private final static String TAG = "MFL_TEACHERMSJ_SAVETASK";
     private WeakReference<ITeacherView> view;
     private TeacherMessagesOutRO teacherMessagesOutRO;
 
-    protected TeacherMessageSaveTask(ITeacherView view, TeacherMessagesOutRO teacherMessagesOutRO) {
+    protected TeacherCurHorSaveTask(ITeacherView view, TeacherMessagesOutRO teacherMessagesOutRO) {
         this.view = new WeakReference<>(view);
         this.teacherMessagesOutRO = teacherMessagesOutRO;
     }

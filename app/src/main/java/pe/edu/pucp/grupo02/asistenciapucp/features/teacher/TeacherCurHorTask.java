@@ -11,13 +11,13 @@ import pe.edu.pucp.grupo02.asistenciapucp.data.db.entities.TeacherCurHor;
 import pe.edu.pucp.grupo02.asistenciapucp.features.login.ILoginView;
 import pe.edu.pucp.grupo02.asistenciapucp.utils.Utilities;
 
-public class TeacherMessageTask extends AsyncTask<Void, Void, TeacherCurHor> {
+public class TeacherCurHorTask extends AsyncTask<Void, Void, TeacherCurHor> {
 
     private final static String TAG = "MFL_TEACHER_TASK";
     private WeakReference<ITeacherView> view;
     private int msjeId;
 
-    protected TeacherMessageTask(ITeacherView view, int msjeId) {
+    protected TeacherCurHorTask(ITeacherView view, int msjeId) {
         this.view = new WeakReference<>(view);
         this.msjeId = msjeId;
     }

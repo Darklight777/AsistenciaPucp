@@ -3,7 +3,6 @@ package pe.edu.pucp.grupo02.asistenciapucp.features.teacher;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.Pair;
-import android.view.View;
 
 import java.net.UnknownHostException;
 
@@ -15,8 +14,6 @@ import pe.edu.pucp.grupo02.asistenciapucp.data.api.in.TeacherTokenInRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.TeacherAttendanceOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.TeacherMessagesOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.TeacherTokenOutRO;
-import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.UserOutRO;
-import pe.edu.pucp.grupo02.asistenciapucp.features.login.UserSaveTask;
 import pe.edu.pucp.grupo02.asistenciapucp.utils.Utilities;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -147,7 +144,7 @@ public class TeacherPresenter implements ITeacherPresenter {
             TeacherMessagesOutRO teacherMessagesOutRO = result.first;
 
             // Guardar los datos del mensaje en la base de datos
-            new TeacherMessageSaveTask(view, teacherMessagesOutRO).execute();
+            new TeacherCurHorSaveTask(view, teacherMessagesOutRO).execute();
 
             // Ir a la pantalla de mensajes
             view.gotoTeacherMessages(teacherMessagesOutRO.getCurso1(), teacherMessagesOutRO.getCurso2(), teacherMessagesOutRO.getCurso3(),
@@ -257,7 +254,7 @@ public class TeacherPresenter implements ITeacherPresenter {
 
     @Override
     public void messagesOffline() {
-        //new TeacherMessageTask(view, curso, horario, mensaje).execute();
+        //new TeacherCurHorTask(view, curso, horario, mensaje).execute();
     }
 
     @Override

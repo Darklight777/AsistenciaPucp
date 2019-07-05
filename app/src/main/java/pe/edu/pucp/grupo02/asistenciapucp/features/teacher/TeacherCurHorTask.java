@@ -47,11 +47,11 @@ public class TeacherCurHorTask extends AsyncTask<Void, Void, TeacherCurHor> {
         if (view == null) return;
         // Verificar si los cursos y horarios fueron encontrados
         if (teacherCurHor != null) {
-            view.gotoTeacherMessages(teacherCurHor.getCurso1(), teacherCurHor.getCurso2(), teacherCurHor.getCurso3(),
+            view.gotoTeacherMessages(teacherCurHor.getMsjeId(), teacherCurHor.getCurso1(), teacherCurHor.getCurso2(), teacherCurHor.getCurso3(),
                     teacherCurHor.getHorarioArreglo1(), teacherCurHor.getHorarioArreglo2(), teacherCurHor.getHorarioArreglo3());
         } else {
             String message = Utilities.formatString(view.getContext(),
-                    R.string.login_dlg_error_msg_not_found);
+                    R.string.teacher_messages_not_found);
             view.showErrorDialog(message);
         }
     }

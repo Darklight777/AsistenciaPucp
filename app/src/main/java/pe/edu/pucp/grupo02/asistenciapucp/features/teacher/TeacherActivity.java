@@ -35,6 +35,7 @@ public class TeacherActivity extends AppCompatActivity implements ITeacherView{
     public final static String TEACHER_ATTENDANCE_EXTRA_P2 = "TEACHER_ATTENDANCE_EXTRA_P2";
     public final static String TEACHER_ATTENDANCE_EXTRA_P3 = "TEACHER_ATTENDANCE_EXTRA_P3";
 
+    public final static String TEACHER_MSJEID = "TEACHER_MSJEID";
     public final static String TEACHER_COURSE1 = "TEACHER_COURSE1";
     public final static String TEACHER_COURSE2 = "TEACHER_COURSE2";
     public final static String TEACHER_COURSE3 = "TEACHER_COURSE3";
@@ -99,12 +100,14 @@ public class TeacherActivity extends AppCompatActivity implements ITeacherView{
         //datos de entrada para verificacion:
         if (mPresenter.verifyMessagesData()){
             mPresenter.messagesRest();
+            //Utilities.showMessage(this,"MsjeId: "+ msjeId);
             Utilities.showMessage(this, R.string.teacher_msg_loading);
         }
     }
 
-    public void gotoTeacherMessages(String cur1, String cur2, String cur3, String[] hor1, String[] hor2, String[] hor3) {
+    public void gotoTeacherMessages(int msjeId, String cur1, String cur2, String cur3, String[] hor1, String[] hor2, String[] hor3) {
         Intent siguiente = new Intent(this, TeacherMessagesActivity.class);
+        siguiente.putExtra(TEACHER_MSJEID, msjeId);
         siguiente.putExtra(TEACHER_COURSE1, cur1);
         siguiente.putExtra(TEACHER_COURSE2, cur2);
         siguiente.putExtra(TEACHER_COURSE3, cur3);
@@ -164,8 +167,11 @@ public class TeacherActivity extends AppCompatActivity implements ITeacherView{
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                // Obtener mensajes sin conexión
-                                mPresenter.messagesOffline();
+                                // Obtener cursos y horarios sin conexión
+                                //Bundle extras = getIntent().getExtras();
+                                //int msjeId = extras.getInt(TeacherMessagesActivity.TEACHER_MSJEID);
+
+                                mPresenter.messagesOffline(1);
                             }
                         })
                 .setNegativeButton(android.R.string.no, null)

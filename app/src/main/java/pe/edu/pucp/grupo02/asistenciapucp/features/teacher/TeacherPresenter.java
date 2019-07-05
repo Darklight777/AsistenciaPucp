@@ -147,7 +147,7 @@ public class TeacherPresenter implements ITeacherPresenter {
             new TeacherCurHorSaveTask(view, teacherMessagesOutRO).execute();
 
             // Ir a la pantalla de mensajes
-            view.gotoTeacherMessages(teacherMessagesOutRO.getCurso1(), teacherMessagesOutRO.getCurso2(), teacherMessagesOutRO.getCurso3(),
+            view.gotoTeacherMessages(teacherMessagesOutRO.getMsjeId(), teacherMessagesOutRO.getCurso1(), teacherMessagesOutRO.getCurso2(), teacherMessagesOutRO.getCurso3(),
                     teacherMessagesOutRO.getHorarios1(), teacherMessagesOutRO.getHorarios2(), teacherMessagesOutRO.getHorarios3());
         }
     }
@@ -253,8 +253,8 @@ public class TeacherPresenter implements ITeacherPresenter {
     }
 
     @Override
-    public void messagesOffline() {
-        //new TeacherCurHorTask(view, curso, horario, mensaje).execute();
+    public void messagesOffline(int msjeid) {
+        new TeacherCurHorTask(view, msjeid).execute();
     }
 
     @Override

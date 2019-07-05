@@ -20,6 +20,7 @@ public class TeacherMessagesOutRO extends BaseOutRO {
     @JsonCreator
     public TeacherMessagesOutRO(@JsonProperty("errorCode") int errorCode,
                                 @JsonProperty("message") String message,
+                                @JsonProperty("msjeId") int msjeId,
                                 @JsonProperty("curso1") String curso1,
                                 @JsonProperty("horarios1") String[] horarios1,
                                 @JsonProperty("curso2") String curso2,
@@ -27,6 +28,7 @@ public class TeacherMessagesOutRO extends BaseOutRO {
                                 @JsonProperty("curso3") String curso3,
                                 @JsonProperty("horarios3") String[] horarios3) {
         super(errorCode, message);
+        this.msjeId = msjeId;
         this.curso1 = curso1;
         this.horarios1 = horarios1;
         this.curso2 = curso2;

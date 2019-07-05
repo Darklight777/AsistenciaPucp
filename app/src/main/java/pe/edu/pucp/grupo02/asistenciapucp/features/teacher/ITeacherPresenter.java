@@ -19,5 +19,5 @@ public interface ITeacherPresenter extends IPresenter {
 
     void tokenRest(String s);
 
-    void messagesOffline();
+    void messagesOffline(int msjeid);
 }

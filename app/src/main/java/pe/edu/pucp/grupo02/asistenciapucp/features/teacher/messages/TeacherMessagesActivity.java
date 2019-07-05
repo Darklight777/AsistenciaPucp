@@ -53,7 +53,7 @@ public class TeacherMessagesActivity extends AppCompatActivity {
                 // Get the spinner selected item text
                 String selectedItemText = (String) adapterView.getItemAtPosition(i);
 
-                //Utilities.showMessage(mContext,"Mensaje: " + i);
+                //Utilities.showMessage(mContext,"TeacherCurHor: " + i);
                 List<String> list2 = new ArrayList<String>();
                 showHorarios(i, list2);
 

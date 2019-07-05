@@ -18,4 +18,6 @@ public interface ITeacherPresenter extends IPresenter {
     void messagesRest();
 
     void tokenRest(String s);
+
+    void messagesOffline();
 }

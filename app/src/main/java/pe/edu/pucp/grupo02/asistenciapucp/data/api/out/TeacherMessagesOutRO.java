@@ -9,6 +9,7 @@ import pe.edu.pucp.grupo02.asistenciapucp.data.api.base.BaseOutRO;
 @JsonRootName("teacherMessagesOutRO")
 public class TeacherMessagesOutRO extends BaseOutRO {
 
+    private int msjeId;
     private String curso1;
     private String[] horarios1;
     private String curso2;
@@ -32,6 +33,10 @@ public class TeacherMessagesOutRO extends BaseOutRO {
         this.horarios2 = horarios2;
         this.curso3 = curso3;
         this.horarios3 = horarios3;
+    }
+
+    public int getMsjeId() {
+        return msjeId;
     }
 
     public String getCurso1() {

@@ -126,6 +126,7 @@ public class TeacherPresenter implements ITeacherPresenter {
                 if (t instanceof UnknownHostException) {
                     // No se encontró la URL, preguntar si se desea iniciar sesión
                     // sin conexión
+                    view.askForMessagesOffline();
                 } else {
                     // Mostrar mensaje de error en el logcat y en un cuadro de diálogo
                     t.printStackTrace();
@@ -144,6 +145,10 @@ public class TeacherPresenter implements ITeacherPresenter {
         } else {
             // Obtener el objeto JSON
             TeacherMessagesOutRO teacherMessagesOutRO = result.first;
+
+            // Guardar los datos del mensaje en la base de datos
+            new TeacherMessageSaveTask(view, teacherMessagesOutRO).execute();
+
             // Ir a la pantalla de mensajes
             view.gotoTeacherMessages(teacherMessagesOutRO.getCurso1(), teacherMessagesOutRO.getCurso2(), teacherMessagesOutRO.getCurso3(),
                     teacherMessagesOutRO.getHorarios1(), teacherMessagesOutRO.getHorarios2(), teacherMessagesOutRO.getHorarios3());
@@ -248,6 +253,11 @@ public class TeacherPresenter implements ITeacherPresenter {
                     errorCode);
         }
         return new Pair<>(null, message);
+    }
+
+    @Override
+    public void messagesOffline() {
+        //new TeacherMessageTask(view, curso, horario, mensaje).execute();
     }
 
     @Override

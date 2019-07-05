@@ -1,6 +1,7 @@
 package pe.edu.pucp.grupo02.asistenciapucp.features.teacher;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -152,6 +153,22 @@ public class TeacherActivity extends AppCompatActivity implements ITeacherView{
                 .setTitle(R.string.teacher_dlg_error_title)
                 .setMessage(message)
                 .setPositiveButton(android.R.string.ok, null)
+                .show();
+    }
+
+    public void askForMessagesOffline() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.teacher_messages_offline)
+                .setMessage(R.string.teacher_messages_offline2)
+                .setPositiveButton(android.R.string.yes,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Obtener mensajes sin conexión
+                                mPresenter.messagesOffline();
+                            }
+                        })
+                .setNegativeButton(android.R.string.no, null)
                 .show();
     }
 

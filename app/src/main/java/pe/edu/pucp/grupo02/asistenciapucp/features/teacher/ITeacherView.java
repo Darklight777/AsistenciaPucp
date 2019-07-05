@@ -14,4 +14,6 @@ public interface ITeacherView extends IView {
 
     void showErrorDialog(String message);
 
+    void askForMessagesOffline();
+
 }

@@ -6,11 +6,13 @@ import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
 import pe.edu.pucp.grupo02.asistenciapucp.data.db.dao.CourseDao;
+import pe.edu.pucp.grupo02.asistenciapucp.data.db.dao.TeacherCurHorDao;
 import pe.edu.pucp.grupo02.asistenciapucp.data.db.dao.UserDao;
 import pe.edu.pucp.grupo02.asistenciapucp.data.db.entities.Course;
+import pe.edu.pucp.grupo02.asistenciapucp.data.db.entities.TeacherCurHor;
 import pe.edu.pucp.grupo02.asistenciapucp.data.db.entities.User;
 
-@Database(entities = {User.class, Course.class}, version = 1, exportSchema = false)
+@Database(entities = {User.class, Course.class, TeacherCurHor.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static final String DB_NAME = "asistenciapucp.db";
@@ -19,11 +21,12 @@ public abstract class AppDatabase extends RoomDatabase {
     public static AppDatabase getInstance(Context context) {
         if (INSTANCE == null) {
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                    AppDatabase.class, DB_NAME).build();
+                    AppDatabase.class, DB_NAME).fallbackToDestructiveMigration().build();
         }
         return INSTANCE;
     }
 
     public abstract UserDao userDao();
     public abstract CourseDao courseDao();
+    public abstract TeacherCurHorDao teacherMessageDao();
 }

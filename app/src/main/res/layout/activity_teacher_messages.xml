@@ -61,11 +61,12 @@
         <EditText
             android:id="@+id/teacherMessages_txt_message"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="81dp"
             android:layout_margin="50dp"
             android:ems="10"
             android:hint="@string/teacherMessages_txt_message"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:lines="4" />
 
         <Button
             android:id="@+id/teacherMessages_btn_announce"

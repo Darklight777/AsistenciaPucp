@@ -26,13 +26,17 @@ public class TeacherAttendanceActivity extends AppCompatActivity {
         percent2 = super.findViewById(R.id.principal_lbl_asis2);
         percent3 = super.findViewById(R.id.principal_lbl_asis3);
 
+
         showUserDetails();
+
+
     }
 
     private void showUserDetails() {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            // Obtener los porcentajes enviados por el Intent
+            // Obtener los Id y porcentajes enviados por el Intent
+            int attId = extras.getInt(TeacherActivity.TEACHER_ATTENDANCE_EXTRA_ATTID);
             String porc1 = extras.getString(TeacherActivity.TEACHER_ATTENDANCE_EXTRA_P1);
             String porc2 = extras.getString(TeacherActivity.TEACHER_ATTENDANCE_EXTRA_P2);
             String porc3 = extras.getString(TeacherActivity.TEACHER_ATTENDANCE_EXTRA_P3);
@@ -42,6 +46,7 @@ public class TeacherAttendanceActivity extends AppCompatActivity {
             percent3.setText(porc3);
         }
     }
+
     public void retroceder(View view){
         Intent anterior = new Intent(this, TeacherActivity.class);
         startActivity(anterior);

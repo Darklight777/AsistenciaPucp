@@ -28,6 +28,7 @@ public class TeacherActivity extends AppCompatActivity implements ITeacherView{
     public final static String TEACHER_TOKEN_EXTRA_COURSETIME = "TEACHER_EXTRA_COURSETIME";
     public final static String TEACHER_TOKEN_EXTRA_COURSESCH = "TEACHER_EXTRA_COURSESCH";
 
+    public final static String TEACHER_ATTENDANCE_EXTRA_ATTID = "TEACHER_ATTENDANCE_EXTRA_ATTID";
     public final static String TEACHER_ATTENDANCE_EXTRA_P1 = "TEACHER_ATTENDANCE_EXTRA_P1";
     public final static String TEACHER_ATTENDANCE_EXTRA_P2 = "TEACHER_ATTENDANCE_EXTRA_P2";
     public final static String TEACHER_ATTENDANCE_EXTRA_P3 = "TEACHER_ATTENDANCE_EXTRA_P3";
@@ -136,8 +137,9 @@ public class TeacherActivity extends AppCompatActivity implements ITeacherView{
         //finish();
     }
 
-    public void MoverATeacherAttendance(String n1, String n2, String n3){//String n1, String n2, String n3){
+    public void MoverATeacherAttendance(int attId, String n1, String n2, String n3){//String n1, String n2, String n3){
         Intent siguiente = new Intent(this, TeacherAttendanceActivity.class);
+        siguiente.putExtra(TEACHER_ATTENDANCE_EXTRA_ATTID, attId);
         siguiente.putExtra(TEACHER_ATTENDANCE_EXTRA_P1, n1);
         siguiente.putExtra(TEACHER_ATTENDANCE_EXTRA_P2, n2);
         siguiente.putExtra(TEACHER_ATTENDANCE_EXTRA_P3, n3);
@@ -176,6 +178,23 @@ public class TeacherActivity extends AppCompatActivity implements ITeacherView{
                 .setNegativeButton(android.R.string.no, null)
                 .show();
     }
+
+
+    public void askForAttendanceOffline(){
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.teacher_messages_offline1)
+                .setMessage(R.string.teacher_messages_offline2)
+                .setPositiveButton(android.R.string.yes,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                mPresenter.attendanceOffline(1);
+                            }
+                        })
+                .setNegativeButton(android.R.string.no, null)
+                .show();
+    }
+
 
     @Override
     public Context getContext() {

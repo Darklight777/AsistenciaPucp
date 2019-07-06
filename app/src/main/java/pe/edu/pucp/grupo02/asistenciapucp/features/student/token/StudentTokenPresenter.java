@@ -53,13 +53,6 @@ public class StudentTokenPresenter implements IStudentTokenPresenter {
         });
 
     }
-
-
-
-
-
-
-
     private void processGenerateTokenResponse(Response<GenerateTokenOutRO> response, String courseN,
                                               String courseS, String courseT ){
         // Verificar respuesta del servidor REST

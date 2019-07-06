@@ -12,6 +12,8 @@ import pe.edu.pucp.grupo02.asistenciapucp.data.api.in.LoginInRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.StudentAttendanceOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.StudentMessagesOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.StudentTokenOutRO;
+import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.TeacherCurHorSaveTask;
+import pe.edu.pucp.grupo02.asistenciapucp.features.teacher.TeacherCurHorTask;
 import pe.edu.pucp.grupo02.asistenciapucp.utils.Utilities;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -100,7 +102,7 @@ public class StudentPresenter implements IStudentPresenter{
                 if (t instanceof UnknownHostException) {
                     // No se encontró la URL, preguntar si se desea iniciar sesión
                     // sin conexión
-                    view.askForMessagesOffline();
+                    view.askForAttendanceOffline();
                 } else {
                     // Mostrar mensaje de error en el logcat y en un cuadro de diálogo
                     t.printStackTrace();
@@ -147,8 +149,12 @@ public class StudentPresenter implements IStudentPresenter{
         } else {
             // Obtener el objeto JSON
             StudentAttendanceOutRO studentAttendanceRO = result.first;
+
+            // Guardar los datos del mensaje en la base de datos
+            new StudentAttendanceSaveTask(view, studentAttendanceRO).execute();
+
             // Ir a la pantalla de mensajes
-            view.gotoStudentAttendance(studentAttendanceRO.getPorce1(), studentAttendanceRO.getPorce2(), studentAttendanceRO.getPorce3());
+            view.gotoStudentAttendance(studentAttendanceRO.getUserId(),studentAttendanceRO.getPorce1(), studentAttendanceRO.getPorce2(), studentAttendanceRO.getPorce3());
         }
     }
 
@@ -231,8 +237,10 @@ public class StudentPresenter implements IStudentPresenter{
     }
 
     @Override
-    public void messagesOffline() {
-    }
+    public void messagesOffline() { }
+
+    @Override
+    public void attendanceOffline(int userId) { new StudentAttendanceLoginTask(view, userId).execute();}
 
     @Override
     public void onDestroy() {

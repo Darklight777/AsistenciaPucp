@@ -26,10 +26,7 @@ public class TeacherAttendanceActivity extends AppCompatActivity {
         percent2 = super.findViewById(R.id.principal_lbl_asis2);
         percent3 = super.findViewById(R.id.principal_lbl_asis3);
 
-
         showUserDetails();
-
-
     }
 
     private void showUserDetails() {
@@ -45,10 +42,6 @@ public class TeacherAttendanceActivity extends AppCompatActivity {
             percent3.setText(porc3);
         }
     }
-
-
-
-
     public void retroceder(View view){
         Intent anterior = new Intent(this, TeacherActivity.class);
         startActivity(anterior);

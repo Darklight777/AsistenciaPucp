@@ -27,6 +27,7 @@ public class StudentActivity extends AppCompatActivity implements IStudentView {
     public final static String STUDENT_MSJE2 = "STUDENT_MSJE2";
     public final static String STUDENT_MSJE3 = "STUDENT_MSJE3";
 
+    public final static String STUDENT_USERID = "STUDENT_USERID";
     public final static String STUDENT_PORC1 = "STUDENT_PORC1";
     public final static String STUDENT_PORC2 = "STUDENT_PORC2";
     public final static String STUDENT_PORC3 = "STUDENT_PORC3";
@@ -78,9 +79,10 @@ public class StudentActivity extends AppCompatActivity implements IStudentView {
         startActivity(siguiente);
     }
 
-    public void gotoStudentAttendance(String porce1, String porce2, String porce3){
+    public void gotoStudentAttendance(int userId, String porce1, String porce2, String porce3){
         // Iniciar la actividad de porcentaje de asistencias
         Intent siguiente = new Intent(this, StudentAttendanceActivity.class);
+        siguiente.putExtra(STUDENT_USERID, userId);
         siguiente.putExtra(STUDENT_PORC1, porce1);
         siguiente.putExtra(STUDENT_PORC2, porce2);
         siguiente.putExtra(STUDENT_PORC3, porce3);
@@ -107,6 +109,25 @@ public class StudentActivity extends AppCompatActivity implements IStudentView {
                             public void onClick(DialogInterface dialog, int which) {
                                 // Obtener mensajes sin conexión
                                 mPresenter.messagesOffline();
+                            }
+                        })
+                .setNegativeButton(android.R.string.no, null)
+                .show();
+    }
+
+    public void askForAttendanceOffline() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.teacher_messages_offline1)
+                .setMessage(R.string.teacher_messages_offline2)
+                .setPositiveButton(android.R.string.yes,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Obtener cursos y horarios sin conexión
+                                //Bundle extras = getIntent().getExtras();
+                                //int msjeId = extras.getInt(TeacherMessagesActivity.TEACHER_MSJEID);
+
+                                mPresenter.attendanceOffline(1);
                             }
                         })
                 .setNegativeButton(android.R.string.no, null)

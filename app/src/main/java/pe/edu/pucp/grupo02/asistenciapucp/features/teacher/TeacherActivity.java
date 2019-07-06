@@ -160,7 +160,7 @@ public class TeacherActivity extends AppCompatActivity implements ITeacherView{
 
     public void askForMessagesOffline() {
         new AlertDialog.Builder(this)
-                .setTitle(R.string.teacher_messages_offline)
+                .setTitle(R.string.teacher_messages_offline1)
                 .setMessage(R.string.teacher_messages_offline2)
                 .setPositiveButton(android.R.string.yes,
                         new DialogInterface.OnClickListener() {

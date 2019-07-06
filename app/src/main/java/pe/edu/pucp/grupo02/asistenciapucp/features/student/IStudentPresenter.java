@@ -16,5 +16,8 @@ public interface IStudentPresenter extends IPresenter {
 
     void asistenciaRest();
 
+    void attendanceOffline(int userId);
+
     void messagesOffline();
+
 }

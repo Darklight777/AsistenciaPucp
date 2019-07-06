@@ -20,6 +20,7 @@ public class TeacherCurHorSaveTask extends AsyncTask<Void, Void, Boolean> {
         this.teacherMessagesOutRO = teacherMessagesOutRO;
     }
 
+
     @Override
     protected Boolean doInBackground(Void... voids) {
         // Verificar que la vista todavía está disponible

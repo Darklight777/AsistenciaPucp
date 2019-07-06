@@ -13,16 +13,30 @@ public class UserOutRO extends BaseOutRO {
     private String fullName;
     private String email;
 
+    private String servidor;
+    private int keyAutorizacion;
+    private String nombreAlumno;
+    private String rol;
+
     @JsonCreator
     public UserOutRO(@JsonProperty("errorCode") int errorCode,
                      @JsonProperty("message") String message,
                      @JsonProperty("userId") int userId,
                      @JsonProperty("fullName") String fullName,
-                     @JsonProperty("email") String email) {
+                     @JsonProperty("email") String email,
+                     @JsonProperty("servidorID") String servidor,
+                     @JsonProperty("keyAutorizacion") int keyAutorizacion,
+                     @JsonProperty("usuarioAutorizacion") String nombreAlumno,
+                     @JsonProperty("rolUsuario") String rol
+                     ) {
         super(errorCode, message);
         this.userId = userId;
         this.fullName = fullName;
         this.email = email;
+        this.servidor = servidor;
+        this.keyAutorizacion = keyAutorizacion;
+        this.nombreAlumno = nombreAlumno;
+        this.rol = rol;
     }
 
     public int getUserId() {
@@ -35,5 +49,22 @@ public class UserOutRO extends BaseOutRO {
 
     public String getEmail() {
         return email;
+    }
+
+
+    public String getServidor() {
+        return servidor;
+    }
+
+    public int getKeyAutorizacion() {
+        return keyAutorizacion;
+    }
+
+    public String getNombreAlumno() {
+        return nombreAlumno;
+    }
+
+    public String getRol() {
+        return rol;
     }
 }

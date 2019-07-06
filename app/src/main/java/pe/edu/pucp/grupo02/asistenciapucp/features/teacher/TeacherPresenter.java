@@ -14,6 +14,7 @@ import pe.edu.pucp.grupo02.asistenciapucp.data.api.in.TeacherTokenInRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.TeacherAttendanceOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.TeacherMessagesOutRO;
 import pe.edu.pucp.grupo02.asistenciapucp.data.api.out.TeacherTokenOutRO;
+import pe.edu.pucp.grupo02.asistenciapucp.features.login.UserSaveTask;
 import pe.edu.pucp.grupo02.asistenciapucp.utils.Utilities;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -167,7 +168,7 @@ public class TeacherPresenter implements ITeacherPresenter {
                 if (t instanceof UnknownHostException) {
                     // No se encontró la URL, preguntar si se desea iniciar sesión
                     // sin conexión
-                    //view.askForLoginOffline();
+                    view.askForAttendanceOffline();
                 } else {
                     // Mostrar mensaje de error en el logcat y en un cuadro de diálogo
                     t.printStackTrace();
@@ -187,9 +188,9 @@ public class TeacherPresenter implements ITeacherPresenter {
             // Obtener el objeto JSON
             TeacherAttendanceOutRO teacherAttendanceOutRO = result.first;
             // Guardar los datos del usuario en la base de datos
-            //new UserSaveTask(view, date, teacherTokenOutRO).execute();
+            new TeacherAttendanceSaveTask(view, teacherAttendanceOutRO).execute();
             // Ir a la pantalla de bienvenida
-            view.MoverATeacherAttendance(teacherAttendanceOutRO.getPorc1(),teacherAttendanceOutRO.getPorc2(),
+            view.MoverATeacherAttendance(teacherAttendanceOutRO.getAttId(), teacherAttendanceOutRO.getPorc1(),teacherAttendanceOutRO.getPorc2(),
                     teacherAttendanceOutRO.getPorc3());
         }
     }
@@ -252,9 +253,17 @@ public class TeacherPresenter implements ITeacherPresenter {
         return new Pair<>(null, message);
     }
 
+
+
+
     @Override
     public void messagesOffline(int msjeid) {
         new TeacherCurHorTask(view, msjeid).execute();
+    }
+
+    @Override
+    public void attendanceOffline(int attId){
+        new TeacherAttendanceTask(view, attId).execute();
     }
 
     @Override

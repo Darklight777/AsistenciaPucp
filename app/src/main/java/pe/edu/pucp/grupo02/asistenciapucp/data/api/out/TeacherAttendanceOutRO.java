@@ -12,10 +12,12 @@ public class TeacherAttendanceOutRO extends BaseOutRO {
     private String porc1;
     private String porc2;
     private String porc3;
+    private int attId;
 
     @JsonCreator
     public TeacherAttendanceOutRO(@JsonProperty("errorCode") int errorCode,
                      @JsonProperty("message") String message,
+                     @JsonProperty("attId") int attId,
                      @JsonProperty("porc1") String porc1,
                      @JsonProperty("porc2") String porc2,
                      @JsonProperty("porc3") String  porc3) {
@@ -23,6 +25,7 @@ public class TeacherAttendanceOutRO extends BaseOutRO {
         this.porc1 = porc1;
         this.porc2 = porc2;
         this.porc3 = porc3;
+        this.attId = attId;
     }
 
     public String getPorc1() {
@@ -35,5 +38,9 @@ public class TeacherAttendanceOutRO extends BaseOutRO {
 
     public String getPorc3() {
         return porc3;
+    }
+
+    public int getAttId() {
+        return attId;
     }
 }
